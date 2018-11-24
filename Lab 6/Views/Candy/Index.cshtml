@@ -1,0 +1,43 @@
+﻿@model CandyModel
+@{
+    ViewData["Title"] = "Candy";
+}
+
+<h2>Add a Candy</h2>
+<form method="post" asp-action="Index" asp-controller="Candy">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="ProductName" class="control-label">Candy</label>
+        <input type="text" asp-for="ProductName" placeholder="Enter candy name" class="form-control" />
+        <span asp-validation-for="ProductName"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+
+</form>
+
+<br />
+
+<h2>Candies</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Candy Name</th>
+            <th scope="col">Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var candy in Model.CandyList)
+        {
+            <tr>
+                <td>@candy.ProductName</td>
+                <td>
+                    <form method="post" asp-action="Delete" asp-controller="Candy">
+                        @Html.AntiForgeryToken()
+                        <input hidden asp-for="Id" value="@candy.Id" />
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

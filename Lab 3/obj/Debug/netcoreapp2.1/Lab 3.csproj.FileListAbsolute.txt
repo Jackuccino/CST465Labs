@@ -1,0 +1,56 @@
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.deps.json
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.runtimeconfig.json
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.runtimeconfig.dev.json
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.dll
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.pdb
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.csprojAssemblyReference.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.csproj.CoreCompileInputs.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorAssemblyInfo.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorAssemblyInfo.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.AssemblyInfoInputs.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.AssemblyInfo.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorTargetAssemblyInfo.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.dll
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.pdb
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.Views.dll
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.Views.pdb
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.TagHelpers.input.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.TagHelpers.output.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorCoreGenerate.cache
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorTargetAssemblyInfo.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.Views.pdb
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.csproj.CopyComplete
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\bin\Debug\netcoreapp2.1\ArmadilloLib.dll
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Armadillo\Index.g.cshtml.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Armadillo\List.g.cshtml.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Razor\_ViewImports.g.cshtml.cs
+C:\Users\jinjie.xu\Desktop\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Armadillo\SearchResults.g.cshtml.cs
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.deps.json
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.runtimeconfig.json
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.runtimeconfig.dev.json
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.dll
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.pdb
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.Views.dll
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\Lab 3.Views.pdb
+D:\CST465 Web Dev\Lab 3\bin\Debug\netcoreapp2.1\ArmadilloLib.dll
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.csprojAssemblyReference.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.csproj.CoreCompileInputs.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorAssemblyInfo.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorAssemblyInfo.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.AssemblyInfoInputs.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.AssemblyInfo.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.TagHelpers.input.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.TagHelpers.output.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorCoreGenerate.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Armadillo\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Armadillo\List.g.cshtml.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Armadillo\SearchResults.g.cshtml.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Razor\_ViewImports.g.cshtml.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorTargetAssemblyInfo.cache
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.RazorTargetAssemblyInfo.cs
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.Views.pdb
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.csproj.CopyComplete
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.dll
+D:\CST465 Web Dev\Lab 3\obj\Debug\netcoreapp2.1\Lab 3.pdb

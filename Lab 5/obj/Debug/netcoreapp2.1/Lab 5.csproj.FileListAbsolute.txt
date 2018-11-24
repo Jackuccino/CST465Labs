@@ -1,0 +1,56 @@
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.csproj.CoreCompileInputs.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorAssemblyInfo.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorAssemblyInfo.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.AssemblyInfoInputs.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.AssemblyInfo.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.TagHelpers.input.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.TagHelpers.output.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorCoreGenerate.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorTargetAssemblyInfo.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorTargetAssemblyInfo.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.dll
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.pdb
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.deps.json
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.runtimeconfig.json
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.runtimeconfig.dev.json
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.dll
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.pdb
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.Views.dll
+C:\Users\Jack\Desktop\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.Views.pdb
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.Views.pdb
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.csproj.CopyComplete
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.csprojAssemblyReference.cache
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Candy\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Costume\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.deps.json
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.runtimeconfig.json
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.runtimeconfig.dev.json
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.dll
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.pdb
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.Views.dll
+E:\CST465 Web Dev\Lab 5\bin\Debug\netcoreapp2.1\Lab 5.Views.pdb
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.csprojAssemblyReference.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.csproj.CoreCompileInputs.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorAssemblyInfo.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorAssemblyInfo.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.AssemblyInfoInputs.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.AssemblyInfo.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.TagHelpers.input.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.TagHelpers.output.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorCoreGenerate.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Candy\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Costume\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorTargetAssemblyInfo.cache
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.RazorTargetAssemblyInfo.cs
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.Views.pdb
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.dll
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.pdb
+E:\CST465 Web Dev\Lab 5\obj\Debug\netcoreapp2.1\Lab 5.csproj.CopyComplete

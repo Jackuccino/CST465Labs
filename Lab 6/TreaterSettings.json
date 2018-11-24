@@ -1,0 +1,6 @@
+{
+  "AllowCandyDelete": false,
+  "AllowCostumeDelete": true,
+  "DefaultCostume": "Twix",
+  "DefaultCandy": "Twix"
+}

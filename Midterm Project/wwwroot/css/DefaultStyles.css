@@ -1,0 +1,42 @@
+﻿html, body {
+    height: 100%;
+}
+
+footer, nav {
+    background-color: #06142F !important;
+}
+
+footer {
+    margin-top: 15px;
+}
+
+body {
+    background-color: #020D24 !important;
+    color: #6490F3 !important;
+}
+
+#TextBox {
+    background-color: #9FB9F6 !important;
+}
+
+#TextArea {
+    background-color: #9FB9F6 !important;
+    height: 200px !important;
+}
+
+button {
+    background-color: #6490F3 !important;
+}
+
+.card {
+    border: 0.5px solid !important;
+    padding: 10px !important;
+}
+
+.truefalse-select {
+    width: 85px !important;
+}
+
+.make-center {
+    text-align: center !important;
+}

@@ -1,0 +1,71 @@
+﻿@model ComputerModel
+
+@{
+    ViewData["Title"] = "Submission";
+}
+
+<h2>Submission</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h4>Directly Output</h4>
+            <div>
+                <span>Name: </span>@Model.Name
+            </div>
+            <div>
+                <span>Password: </span>@Model.Password
+            </div>
+            <div>
+                <span>IP Address: </span>@Model.IPAddress
+            </div>
+            <div>
+                <span>Location: </span>@Model.Location
+            </div>
+            <div>
+                <span>OS: </span>@Model.OS
+            </div>
+            <div>
+                <span>Description: </span>@Model.Description
+            </div>
+            <div>
+                <span>Supported Monitor: </span>@Model.SupportedMonitors
+            </div>
+        </div>
+        <div class="col-sm">
+            <h4>DisplayFor</h4>
+            <div>
+                <span>Name: </span>
+                @Html.DisplayFor(m => m.Name)
+            </div>
+            <div>
+                <span>Password: </span>
+                @Html.DisplayFor(m => m.Password)
+            </div>
+            <div>
+                <span>IP Address: </span>
+                @Html.DisplayFor(m => m.IPAddress)
+            </div>
+            <div>
+                <span>Location: </span>
+                @Html.DisplayFor(m => m.Location)
+            </div>
+            <div>
+                <span>OS: </span>
+                @Html.DisplayFor(m => m.OS)
+            </div>
+            <div>
+                <span>Description: </span>
+                @Html.DisplayFor(m => m.Description)
+            </div>
+            <div>
+                <span>Supported Monitor: </span>
+                @Html.DisplayFor(m => m.SupportedMonitors)
+            </div>
+        </div>
+        <div class="col-sm">
+            <h4>DisplayForModel</h4>
+            @Html.DisplayForModel()
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model TreaterModel
+@{
+    ViewData["Title"] = "Treater";
+}
+
+<form method="post" asp-action="Index" asp-controller="Home">
+
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input type="text" asp-for="Name" placeholder="Enter treater's name" class="form-control" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label asp-for="FavoriteCandyID" class="control-label">Favorite Candy</label>
+                    <select asp-for="FavoriteCandyID" asp-items="@(new SelectList(Model.CandyList, "Id", "ProductName"))" class="form-control">
+                        <option selected value="">-- Select a candy --</option>
+                    </select>
+                    <span asp-validation-for="FavoriteCandyID"></span>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="form-group">
+                    <label asp-for="CostumeID" class="control-label">Costume</label>
+                    <select asp-for="CostumeID" asp-items="@(new SelectList(Model.CostumeList, "Id", "CostumeName"))" class="form-control">
+                        <option selected value="">-- Select a costume --</option>
+                    </select>
+                    <span asp-validation-for="CostumeID"></span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+<br/>
+<h2>Trick or Treaters</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Favorite Candy</th>
+            <th scope="col">Costume</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var treater in Model.TreaterList)
+        {
+            <tr>
+                <td>@treater.Name</td>
+                <td>@Model.CandyList.Find(x => x.Id == treater.FavoriteCandyID).ProductName</td>
+                <td>@Model.CostumeList.Find(x => x.Id == treater.CostumeID).CostumeName</td>
+            </tr>
+        }
+    </tbody>
+</table>

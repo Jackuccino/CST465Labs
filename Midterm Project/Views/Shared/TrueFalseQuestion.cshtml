@@ -1,0 +1,11 @@
+﻿@model TestQuestion
+
+<p class="card-text">@Html.Raw(Model.Question)</p>
+<input asp-for="ID" type="hidden" />
+<input asp-for="Question" type="hidden" />
+<select asp-for="Answer" class="form-control truefalse-select">
+    <option selected value=""></option>
+    <option value="True">True</option>
+    <option value="False">False</option>
+</select>
+<span asp-validation-for="Answer"></span>

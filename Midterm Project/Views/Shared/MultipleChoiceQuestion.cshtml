@@ -1,0 +1,15 @@
+﻿@model TestQuestion
+
+<p class="card-text">@Html.Raw(Model.Question)</p>
+<input asp-for="ID" type="hidden" />
+<input asp-for="Question" type="hidden" />
+@foreach (var choice in Model.Choices)
+{
+    <div>
+        <label>
+            <input type="radio" asp-for="Answer" value="@choice" />
+            @choice
+        </label>
+    </div>
+    <span asp-validation-for="Answer"></span>
+}

@@ -1,0 +1,46 @@
+﻿@model ComputerModel
+
+<form method="post" asp-action="Index" asp-controller="TagHelper">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input type="text" asp-for="Name" placeholder="Enter your name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input type="password" asp-for="Password" placeholder="Enter password" class="form-control" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IPAddress" class="control-label"></label>
+        <input type="text" asp-for="IPAddress" placeholder="Enter IP address" class="form-control" />
+        <span asp-validation-for="IPAddress"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location" class="control-label"></label>
+        <input type="text" asp-for="Location" placeholder="Enter location" class="form-control" />
+        <span asp-validation-for="Location"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="OS" class="control-label"></label>
+        <select asp-for="OS" asp-items="new SelectList(ComputerModel.OSTypes)" class="form-control">
+            <option selected value="">--- Select an OS ---</option>
+        </select>
+        <span asp-validation-for="OS"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" rows="5" placeholder="Enter description" class="form-control"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SupportedMonitors" class="control-label"></label>
+        <input type="number" asp-for="SupportedMonitors" placeholder="Enter a number" class="form-control" />
+        <span asp-validation-for="SupportedMonitors"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

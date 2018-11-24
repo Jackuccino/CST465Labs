@@ -1,0 +1,45 @@
+﻿@model List<TestQuestion>
+@{
+    ViewData["Title"] = "Midterm";
+}
+
+<div class="make-center">
+    <h2>Midterm</h2>
+</div>
+
+<form method="post" asp-action="TakeTest" asp-controller="Midterm">
+
+    @Html.AntiForgeryToken()
+
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        <div class="form-group">
+            <div class="card bg-transparent ">
+                <h2 class="card-title">Question: @Model[i].ID</h2>
+                <div class="card-body">
+                    @if (Model[i].Type == "TrueFalseQuestion")
+                    {
+                        <partial name="TrueFalseQuestion" for="@Model[i]" />
+                    }
+                    else if (Model[i].Type == "ShortAnswerQuestion")
+                    {
+                        <partial name="ShortAnswerQuestion" for="@Model[i]" />
+                    }
+                    else if (Model[i].Type == "LongAnswerQuestion")
+                    {
+                        <partial name="LongAnswerQuestion" for="@Model[i]" />
+                    }
+                    else if (Model[i].Type == "MultipleChoiceQuestion")
+                    {
+                        <partial name="MultipleChoiceQuestion" for="@Model[i]" />
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="make-center">
+        <button type="Submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>

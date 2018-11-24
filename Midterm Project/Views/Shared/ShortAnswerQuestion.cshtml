@@ -1,0 +1,7 @@
+﻿@model TestQuestion
+
+<p class="card-text">@Html.Raw(Model.Question)</p>
+<input asp-for="ID" type="hidden" />
+<input asp-for="Question" type="hidden" />
+<input type="text" maxlength="100" asp-for="Answer" class="form-control" />
+<span asp-validation-for="Answer"></span>

@@ -1,0 +1,48 @@
+﻿@model ComputerModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>HHInput</h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.Label("Name", "Name", new { @class = "control-label" })
+        @Html.TextBox("Name", Model.Name, new { @class = "form-control", placeholder = "Enter your name" })
+        @Html.ValidationMessage("Name")
+    </div>
+    <div class="form-group">
+        @Html.Label("Password", "Password", new { @class = "control-label" })
+        @Html.TextBox("Password", Model.Password, new { @class = "form-control", type = "password", placeholder = "Enter password" })
+        @Html.ValidationMessage("Password")
+    </div>
+    <div class="form-group">
+        @Html.Label("IPAddress", "IP Address", new { @class = "control-label" })
+        @Html.TextBox("IPAddress", Model.IPAddress, new { @class = "form-control", placeholder = "Enter IP address" })
+        @Html.ValidationMessage("IPAddress")
+    </div>
+    <div class="form-group">
+        @Html.Label("Location", "Location", new { @class = "control-label" })
+        @Html.TextBox("Location", Model.Location, new { @class = "form-control", placeholder = "Enter location" })
+        @Html.ValidationMessage("Location")
+    </div>
+    <div class="form-group">
+        @Html.Label("OS", "OS", new { @class = "control-label" })
+        @Html.DropDownList("OS", new SelectList(ComputerModel.OSTypes), "--- Select an OS ---", new { @class = "form-control" })
+        @Html.ValidationMessage("OS")
+    </div>
+    <div class="form-group">
+        @Html.Label("Description", "Description", new { @class = "control-label" })
+        @Html.TextArea("Description", Model.Description, new { @class = "form-control", rows = "5", placeholder = "Enter description" })
+        @Html.ValidationMessage("Description")
+    </div>
+    <div class="form-group">
+        @Html.Label("SupportedMonitors", "Supported Monitors", new { @class = "control-label" })
+        @Html.TextBox("SupportedMonitors", Model.SupportedMonitors, new { @class = "form-control", type = "number", placeholder = "Enter a number" })
+        @Html.ValidationMessage("SupportedMonitors")
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

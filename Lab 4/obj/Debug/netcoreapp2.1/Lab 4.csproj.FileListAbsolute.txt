@@ -1,0 +1,179 @@
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.deps.json
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.json
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.dev.json
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.dll
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csprojAssemblyReference.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CoreCompileInputs.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfoInputs.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfo.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cache
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.pdb
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.dll
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.pdb
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.dll
+C:\Users\Jack\Desktop\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.pdb
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.input.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.output.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorCoreGenerate.cache
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.Views.pdb
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CopyComplete
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Submission.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\_ViewImports.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorFor\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorForModel\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInput\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInputFor\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Standard\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\TagHelper\Index.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\ComputerModel.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\DisplayTemplates\ComputerModel.g.cshtml.cs
+C:\Users\Jack\Desktop\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\OSDropdown.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.deps.json
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.json
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.dev.json
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.dll
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.pdb
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.dll
+F:\CST415 Networks\Lab 4\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.pdb
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csprojAssemblyReference.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CoreCompileInputs.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfoInputs.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfo.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.input.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.output.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorCoreGenerate.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorForModel\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorFor\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInputFor\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInput\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\DisplayTemplates\ComputerModel.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\ComputerModel.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\OSDropdown.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Submission.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Standard\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\TagHelper\Index.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Razor\_ViewImports.g.cshtml.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cache
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cs
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.Views.pdb
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.dll
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.pdb
+F:\CST415 Networks\Lab 4\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CopyComplete
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.deps.json
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.json
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.dev.json
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.dll
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.pdb
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.dll
+F:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.pdb
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csprojAssemblyReference.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CoreCompileInputs.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfoInputs.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfo.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.input.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.output.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorCoreGenerate.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorForModel\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorFor\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInputFor\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInput\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\DisplayTemplates\ComputerModel.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\ComputerModel.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\OSDropdown.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Submission.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Standard\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\TagHelper\Index.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\_ViewImports.g.cshtml.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cache
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cs
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.Views.pdb
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.dll
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.pdb
+F:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CopyComplete
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.deps.json
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.json
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.dev.json
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.dll
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.pdb
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.dll
+D:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.pdb
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CoreCompileInputs.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfoInputs.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfo.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.input.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.output.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorCoreGenerate.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorForModel\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorFor\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInputFor\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInput\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\DisplayTemplates\ComputerModel.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\ComputerModel.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\OSDropdown.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Submission.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Standard\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\TagHelper\Index.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cache
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cs
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.Views.pdb
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.dll
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.pdb
+D:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CopyComplete
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.deps.json
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.json
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.runtimeconfig.dev.json
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.dll
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.pdb
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.dll
+E:\CST465 Web Dev\Lab 4\bin\Debug\netcoreapp2.1\Lab 4.Views.pdb
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csprojAssemblyReference.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CoreCompileInputs.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorAssemblyInfo.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfoInputs.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.AssemblyInfo.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.input.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.TagHelpers.output.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorCoreGenerate.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorForModel\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHEditorFor\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInputFor\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\HHInput\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\DisplayTemplates\ComputerModel.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\ComputerModel.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\EditorTemplates\OSDropdown.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Submission.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_DefaultLayout.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\Standard\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\TagHelper\Index.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cache
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.RazorTargetAssemblyInfo.cs
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.Views.pdb
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.dll
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.pdb
+E:\CST465 Web Dev\Lab 4\obj\Debug\netcoreapp2.1\Lab 4.csproj.CopyComplete

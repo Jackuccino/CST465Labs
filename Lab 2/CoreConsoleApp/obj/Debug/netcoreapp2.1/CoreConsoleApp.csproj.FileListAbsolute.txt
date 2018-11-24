@@ -1,0 +1,13 @@
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\bin\Debug\netcoreapp2.1\CoreConsoleApp.deps.json
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\bin\Debug\netcoreapp2.1\CoreConsoleApp.runtimeconfig.json
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\bin\Debug\netcoreapp2.1\CoreConsoleApp.runtimeconfig.dev.json
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\bin\Debug\netcoreapp2.1\CoreConsoleApp.dll
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\bin\Debug\netcoreapp2.1\CoreConsoleApp.pdb
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\bin\Debug\netcoreapp2.1\ArmadilloLib.dll
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.csprojAssemblyReference.cache
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.AssemblyInfoInputs.cache
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.AssemblyInfo.cs
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.csproj.CopyComplete
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.dll
+C:\Users\jinjie.xu\Desktop\CoreConsoleApp\obj\Debug\netcoreapp2.1\CoreConsoleApp.pdb

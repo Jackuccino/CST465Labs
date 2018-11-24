@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Armadillo>
+
+@{
+    ViewData["Title"] = "SearchResults";
+}
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th style="text-align: left;">Name</th>
+            <th style="text-align: left;">Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var armadillo in Model)
+        {
+            <tr>
+                <td>@armadillo.Name</td>
+                <td>@armadillo.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
