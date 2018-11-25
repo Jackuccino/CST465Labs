@@ -23,8 +23,10 @@
                 <div class="navbar-nav">
                     @Html.ActionLink("Home", null, "Home", null, new { @class = "nav-item nav-link" })
                 </div>
+                <div class="ml-auto">
+                    <partial name="_LoginPartial" />
+                </div>
             </div>
-            <partial name="_LoginPartial" />
         </nav>
         <main>
             <div class="row">
@@ -42,3 +44,5 @@
     </div>
 </body>
 </html>
+
+@RenderSection("Scripts", required: false)

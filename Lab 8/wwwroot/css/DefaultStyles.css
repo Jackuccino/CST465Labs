@@ -25,5 +25,18 @@ body {
 }
 
 button {
-    background-color: #6490F3 !important;
+    background-color: #6490F3;
+}
+
+.dropdown-background {
+    background-color: #020D24 !important;
+}
+
+.dropdown-item-color {
+    color: #6490F3 !important;
+}
+
+.list-background-color {
+    background-color: transparent !important;
+    color: #6490F3 !important;
 }
