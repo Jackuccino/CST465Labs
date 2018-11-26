@@ -12,15 +12,24 @@ namespace Lab_8.Areas.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {
+
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
                 services.AddDbContext<LoginContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("LoginContextConnection")));
-
-                services.AddDefaultIdentity<IdentityUser>()
-                    .AddEntityFrameworkStores<LoginContext>();
+                
+                services.AddDefaultIdentity<CustomIdentityUser>(options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequiredLength = 5;
+                    options.Password.RequireLowercase = true;
+                    options.Password.RequireNonAlphanumeric = true;
+                    options.Password.RequireUppercase = false;
+                })
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<LoginContext>();
             });
         }
     }

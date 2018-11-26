@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lab_8.Models
 {
-    public class LoginContext : IdentityDbContext<IdentityUser>
+    public class LoginContext : IdentityDbContext<CustomIdentityUser>
     {
         public LoginContext(DbContextOptions<LoginContext> options)
             : base(options)

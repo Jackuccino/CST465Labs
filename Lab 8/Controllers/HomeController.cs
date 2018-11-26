@@ -7,10 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Midterm.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
-        [AllowAnonymous]
+        [Authorize]
         public IActionResult Index()
         {
             return View();
