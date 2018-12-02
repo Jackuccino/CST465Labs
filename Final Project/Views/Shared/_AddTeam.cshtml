@@ -1,0 +1,44 @@
+﻿@model Team
+
+
+<form asp-action="AddTeam" asp-controller="Standing" method="post">
+    @Html.AntiForgeryToken()
+
+        <tr>
+            <td>
+                <input asp-for="TeamName" class="form-control" />
+                <span asp-validation-for="TeamName"></span>
+            </td>
+            <td>
+                <input asp-for="Badge" class="form-control" />
+                <span asp-validation-for="Badge"></span>
+            </td>
+            <td>
+                <input asp-for="Wins" class="form-control" />
+                <span asp-validation-for="Wins"></span>
+            </td>
+            <td>
+                <input asp-for="Draws" class="form-control" />
+                <span asp-validation-for="Draws"></span>
+            </td>
+            <td>
+                <input asp-for="Loses" class="form-control" />
+                <span asp-validation-for="Loses"></span>
+            </td>
+            <td>
+                <input asp-for="GoalsFor" class="form-control" />
+                <span asp-validation-for="GoalsFor"></span>
+            </td>
+            <td>
+                <input asp-for="GoalsAgainst" class="form-control" />
+                <span asp-validation-for="GoalsAgainst"></span>
+            </td>
+            <td>
+                <input asp-for="Group" class="form-control" />
+                <span asp-validation-for="Group"></span>
+            </td>
+        </tr>
+    <
+        <button type="submit" class="btn btn-primary">Create Team</button>
+        </div>
+</form>

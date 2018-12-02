@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@inject SignInManager<CustomIdentityUser> SignInManager
+@inject UserManager<CustomIdentityUser> UserMan
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" name="viewport" content="width=device-width" />
@@ -23,7 +26,14 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-item nav-link" })
-                    @Html.ActionLink("Roles", "Index", "Admin", null, new { @class = "nav-item nav-link" })
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
+                        {
+                            @Html.ActionLink("Roles", "Index", "Admin", null, new { @class = "nav-item nav-link" })
+                            @Html.ActionLink("AddTeam", "Index", "AddTeam", null, new { @class = "nav-item nav-link" })
+                        }
+                    }
                     @Html.ActionLink("Standings", "Index", "Standing", null, new { @class = "nav-item nav-link" })
                     @Html.ActionLink("Matches", "Index", "Matches", null, new { @class = "nav-item nav-link" })
                 </div>

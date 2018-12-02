@@ -1,28 +1,69 @@
-﻿<div class="card bg-transparent border-white m-3">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-lg-10">
-                <ul class="list-group">
-                    <li class="list-group-item bg-transparent borderless">
-                        <div class="row">
-                            <div class="col-"><img class="team-icon-size" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/QPbjvDwI_0Wuu4tCS2O6uw_48x48.png"></div>
-                            <div class="col-sm-10">Valencia</div>
-                            <div class="col-">3</div>
+﻿@model List<Match>
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    <h4>Group stage - Matchday @(i + 1)/6</h4>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card bg-transparent border-white m-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent borderless">
+                                    <div class="row">
+                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).Badge"></div>
+                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).TeamName</div>
+                                        <div class="col-">@Model[i].HomeGoals</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent borderless disabled">
+                                    <div class="row">
+                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).Badge"></div>
+                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).TeamName</div>
+                                        <div class="col-">@Model[i].AwayGoals</div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </li>
-                    <li class="list-group-item bg-transparent borderless disabled">
-                        <div class="row">
-                            <div class="col-"><img class="team-icon-size" alt="" src="//ssl.gstatic.com/onebox/media/sports/logos/PxDppOF513PSruqWNIIE2w_48x48.png"></div>
-                            <div class="col-sm-10">Young Boys</div>
-                            <div class="col-">1</div>
+                        <div class="col-sm border-left">
+                            <p class="text-center">FT</p>
+                            <p class="text-center">@Model[i].MatchDate</p>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm border-left">
-                <p class="text-center">FT</p>
-                <p class="text-center">11/7</p>
+        </div>
+        @i = @(i+1)
+        <div class="col-sm-6">
+            <div class="card bg-transparent border-white m-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent borderless">
+                                    <div class="row">
+                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).Badge"></div>
+                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).TeamName</div>
+                                        <div class="col-">@Model[i].HomeGoals</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent borderless disabled">
+                                    <div class="row">
+                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).Badge"></div>
+                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).TeamName</div>
+                                        <div class="col-">@Model[i].AwayGoals</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm border-left">
+                            <p class="text-center">FT</p>
+                            <p class="text-center">@Model[i].MatchDate</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+}

@@ -29,22 +29,22 @@ namespace FinalProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult CreateRole(string RoleName)
+        public async Task<IActionResult> CreateRole(string RoleName)
         {
             IdentityRole role = new IdentityRole
             {
                 Name = RoleName
             };
-            IdentityResult identityResult = _RoleManager.CreateAsync(role).Result;
+            IdentityResult identityResult = await _RoleManager.CreateAsync(role);
             return RedirectToAction("Index");
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteRole(string RoleName)
+        public async Task<IActionResult> DeleteRole(string RoleName)
         {
-            IdentityRole role = _RoleManager.FindByNameAsync(RoleName).Result;
-            IdentityResult identityResult = _RoleManager.DeleteAsync(role).Result;
+            IdentityRole role = await _RoleManager.FindByNameAsync(RoleName);
+            IdentityResult identityResult = await _RoleManager.DeleteAsync(role);
             return RedirectToAction("Index");
         }
 
@@ -56,10 +56,10 @@ namespace FinalProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult AddUserToRole(string Email, string RoleName)
+        public async Task<IActionResult> AddUserToRole(string Email, string RoleName)
         {
-            CustomIdentityUser identityUser = _UserManager.FindByEmailAsync(Email).Result;
-            IdentityResult identityResult = _UserManager.AddToRoleAsync(identityUser, RoleName).Result;
+            CustomIdentityUser identityUser = await _UserManager.FindByEmailAsync(Email);
+            IdentityResult identityResult = await _UserManager.AddToRoleAsync(identityUser, RoleName);
 
             if (!identityResult.Succeeded)
             {

@@ -1,4 +1,7 @@
-﻿
+﻿@model Team
+@inject SignInManager<CustomIdentityUser> SignInMan
+@inject UserManager<CustomIdentityUser> UserMan
+
 @{
     ViewData["Title"] = "Standings";
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
@@ -35,28 +38,35 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="A" role="tabpanel" aria-labelledby="A-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupA" />
+            @if (SignInMan.IsSignedIn(User))
+            {
+                if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
+                {
+                    <partial name="_AddTeam" model="@Model" />
+                }
+            }
         </div>
         <div class="tab-pane fade" id="B" role="tabpanel" aria-labelledby="B-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupB" />
         </div>
         <div class="tab-pane fade" id="C" role="tabpanel" aria-labelledby="C-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupC" />
         </div>
         <div class="tab-pane fade" id="D" role="tabpanel" aria-labelledby="D-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupD" />
         </div>
         <div class="tab-pane fade" id="E" role="tabpanel" aria-labelledby="E-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupE" />
         </div>
         <div class="tab-pane fade" id="F" role="tabpanel" aria-labelledby="F-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupF" />
         </div>
         <div class="tab-pane fade" id="G" role="tabpanel" aria-labelledby="G-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupG" />
         </div>
         <div class="tab-pane fade" id="H" role="tabpanel" aria-labelledby="H-tab">
-            <partial name="_StandingTable" />
+            <partial name="_StandingTable" model="@Model.GroupH" />
         </div>
     </div>
 </div>

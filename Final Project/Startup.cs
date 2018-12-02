@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using FinalProject.Repositories;
 
 namespace FinalProject
 {
@@ -24,21 +25,33 @@ namespace FinalProject
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
             services.AddMvc();
+
+            //services.AddSingleton<IConfiguration>(_Configuration);
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
                 facebookOptions.AppId = _Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = _Configuration["Authentication:Facebook:AppSecret"];
-            });           
+            });
+
+            services.AddTransient<ITeamDBRepository, TeamCachingDBRepository>();
+            services.AddTransient<IMatchDBRepository, MatchCachingDBRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            env.EnvironmentName = EnvironmentName.Production;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
             }
 
             app.UseStaticFiles();

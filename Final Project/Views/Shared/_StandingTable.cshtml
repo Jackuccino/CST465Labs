@@ -1,16 +1,78 @@
-﻿<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Club</th>
-            <th class="w-75" scope="col"></th>
-            <th scope="col">MP</th>
-            <th scope="col">W</th>
-            <th scope="col">D</th>
-            <th scope="col">L</th>
-            <th scope="col">GF</th>
-            <th scope="col">GA</th>
-            <th scope="col">GD</th>
-            <th scope="col">Pts</th>
-        </tr>
-    </thead>
-</table>
+﻿@model List<Team>
+
+<form asp-action="AddTeam" asp-controller="Standing" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Club</th>
+                <th class="w-75" scope="col"></th>
+                <th scope="col">MP</th>
+                <th scope="col">W</th>
+                <th scope="col">D</th>
+                <th scope="col">L</th>
+                <th scope="col">GF</th>
+                <th scope="col">GA</th>
+                <th scope="col">GD</th>
+                <th scope="col">Pts</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <th scope="row">@(i + 1)</th>
+                    <td>@Model[i].Badge</td>
+                    <td>@Model[i].TeamName</td>
+                    <td>@Model[i].MatchesPlayed</td>
+                    <td>@Model[i].Wins</td>
+                    <td>@Model[i].Draws</td>
+                    <td>@Model[i].Loses</td>
+                    <td>@Model[i].GoalsFor</td>
+                    <td>@Model[i].GoalsAgainst</td>
+                    <td>@Model[i].GoalsDifference</td>
+                    <td>@Model[i].Points</td>
+                </tr>
+            }
+        </tbody>
+        <tbody>
+            <tr>
+                <td>
+                    <input asp-for="TeamName" class="form-control" />
+                    <span asp-validation-for="TeamName"></span>
+                </td>
+                <td>
+                    <input asp-for="Badge" class="form-control" />
+                    <span asp-validation-for="Badge"></span>
+                </td>
+                <td>
+                    <input asp-for="Wins" class="form-control" />
+                    <span asp-validation-for="Wins"></span>
+                </td>
+                <td>
+                    <input asp-for="Draws" class="form-control" />
+                    <span asp-validation-for="Draws"></span>
+                </td>
+                <td>
+                    <input asp-for="Loses" class="form-control" />
+                    <span asp-validation-for="Loses"></span>
+                </td>
+                <td>
+                    <input asp-for="GoalsFor" class="form-control" />
+                    <span asp-validation-for="GoalsFor"></span>
+                </td>
+                <td>
+                    <input asp-for="GoalsAgainst" class="form-control" />
+                    <span asp-validation-for="GoalsAgainst"></span>
+                </td>
+                <td>
+                    <input type="hidden" asp-for="Group" value='A' class="form-control" />
+                    <span asp-validation-for="Group"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Create Team</button>
+</form>
