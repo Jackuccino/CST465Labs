@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject RoleManager<IdentityRole> RoleMan
+@inject UserManager<CustomIdentityUser> UserMan
+@model string
+
+@{
+    ViewData["Title"] = "Add User To Role";
+}
+
+<h2>Add a User to a Role</h2>
+
+<div>
+    <label>Current User: @Model</label>
+    <br />
+    <label>
+        Current Role:
+        @for (int i = 0; i < UserMan.GetRolesAsync(UserMan.FindByEmailAsync(Model).Result).Result.ToList().Count(); i++)
+        {
+            string role = UserMan.GetRolesAsync(UserMan.FindByEmailAsync(Model).Result).Result.ToList()[i];
+            if (i != 0)
+            {
+                role = string.Concat(", ", role);
+            }
+            @role
+        }
+    </label>
+</div>
+<div class="col-6">
+    <h2>Roles</h2>
+    <ul class="list-group">
+        @foreach (var role in RoleMan.Roles)
+        {
+            <li class="list-group-item list-background-color border-primary">
+                <form asp-action="AddUserToRole" asp-controller="Admin" method="post">
+                    @Html.AntiForgeryToken()
+                    <label for="RoleName" class="control-label">@role.Name</label>
+                    <input type="hidden" id="@Model" name="Email" value="@Model" class="form-control" />
+                    <input type="hidden" id="@role.Name" name="RoleName" value="@role.Name" class="form-control" />
+                    <button type="submit" class="float-right btn btn-primary fas fa-plus"></button>
+                </form>
+            </li>
+        }
+    </ul>
+</div>

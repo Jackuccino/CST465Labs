@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject RoleManager<IdentityRole> RoleMan
+@inject UserManager<CustomIdentityUser> UserMan
+
+@{
+    ViewData["Title"] = "Create Roles";
+}
+
+<h2>Create Roles</h2>
+
+<form asp-action="CreateRole" asp-controller="Admin" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="RoleName" class="control-label">Create a Role</label>
+        <input type="text" id="RoleName" name="RoleName" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create Role</button>
+</form>
+
+<br />
+
+<div class="row">
+    <div class="col-6">
+        <h2>Roles</h2>
+        <ul class="list-group">
+            @foreach (var role in RoleMan.Roles)
+            {
+                <li class="list-group-item list-background-color border-primary">
+                    <form asp-action="DeleteRole" asp-controller="Admin" method="post">
+                        @Html.AntiForgeryToken()
+                        <label for="RoleName" class="control-label">@role.Name</label>
+                        <input type="hidden" id="@role.Id" name="RoleName" value="@role.Name" class="form-control" />
+                        <button type="submit" id="@role.Id" class="float-right btn btn-danger far fa-trash-alt"></button>
+                    </form>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-6">
+        <h2>Users</h2>
+        <ul class="list-group">
+            @foreach (var user in UserMan.Users)
+            {
+                <li class="list-group-item list-background-color border-primary">
+                    @user.Email
+                    @Html.ActionLink("", "AddUserToRole", "Admin", new { Email = user.Email }, new { @class = "float-right btn btn-primary fas fa-users" })
+                </li>
+            }
+        </ul>
+    </div>
+</div>
