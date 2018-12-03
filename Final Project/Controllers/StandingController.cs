@@ -38,6 +38,13 @@ namespace FinalProject.Controllers
         }
         
         [HttpGet]
+        public IActionResult EditTeam(Team team)
+        {
+            return View("AddTeam", team);
+        }
+
+
+        [HttpGet]
         public IActionResult AddTeam()
         {
             return View();

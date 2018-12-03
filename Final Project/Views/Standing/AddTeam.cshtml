@@ -1,0 +1,69 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Add a Team";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>Add a Team</h2>
+
+<form asp-action="AddTeam" asp-controller="Standing" method="post">
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <label asp-for="TeamName" class="control-label"></label>
+                <input asp-for="TeamName" class="form-control" />
+                <span asp-validation-for="TeamName"></span>
+            </div>
+            <div class="col-sm-8">
+                <label asp-for="Badge" class="control-label"></label>
+                <input asp-for="Badge" class="form-control" />
+                <span asp-validation-for="Badge"></span>
+            </div>
+        </div>
+        <div class="row justify-content-start">
+            <div class="col-auto">
+                <label asp-for="Wins" class="control-label"></label>
+                <input type="number" asp-for="Wins" class="form-control number_input_width" />
+                <span asp-validation-for="Wins"></span>
+            </div>
+            <div class="col-auto">
+                <label asp-for="Draws" class="control-label"></label>
+                <input type="number" asp-for="Draws" class="form-control number_input_width" />
+                <span asp-validation-for="Draws"></span>
+            </div>
+            <div class="col-auto">
+                <label asp-for="Loses" class="control-label"></label>
+                <input type="number" asp-for="Loses" class="form-control number_input_width" />
+                <span asp-validation-for="Loses"></span>
+            </div>
+            <div class="col-auto">
+                <label asp-for="GoalsFor" class="control-label"></label>
+                <input type="number" asp-for="GoalsFor" class="form-control goals_input_width" />
+                <span asp-validation-for="GoalsFor"></span>
+            </div>
+            <div class="col-auto">
+                <label asp-for="GoalsAgainst" class="control-label"></label>
+                <input type="number" asp-for="GoalsAgainst" class="form-control goals_input_width" />
+                <span asp-validation-for="GoalsAgainst"></span>
+            </div>
+            <div class="col-auto">
+
+                <label asp-for="Group" class="control-label"></label>
+                <select asp-for="Group" class="form-control group-select-width">
+                    <option selected value=""></option>
+                    <option value='A'>Group A</option>
+                    <option value='B'>Group B</option>
+                    <option value='C'>Group C</option>
+                    <option value='D'>Group D</option>
+                    <option value='E'>Group E</option>
+                    <option value='F'>Group F</option>
+                    <option value='G'>Group G</option>
+                    <option value='H'>Group H</option>
+                </select>
+                <span asp-validation-for="Group"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Create Team</button>
+    </div>
+</form>

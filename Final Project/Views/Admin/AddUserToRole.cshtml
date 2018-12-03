@@ -14,9 +14,9 @@
     <br />
     <label>
         Current Role:
-        @for (int i = 0; i < UserMan.GetRolesAsync(UserMan.FindByEmailAsync(Model ?? "").Result).Result.ToList().Count(); i++)
+        @for (int i = 0; i < UserMan.GetRolesAsync(UserMan.FindByEmailAsync(Model).Result).Result.ToList().Count(); i++)
         {
-            string role = UserMan.GetRolesAsync(UserMan.FindByEmailAsync(Model ?? "").Result).Result.ToList()[i];
+            string role = UserMan.GetRolesAsync(UserMan.FindByEmailAsync(Model).Result).Result.ToList()[i];
             if (i != 0)
             {
                 role = string.Concat(", ", role);

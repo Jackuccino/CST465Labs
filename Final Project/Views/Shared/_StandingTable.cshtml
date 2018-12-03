@@ -44,7 +44,7 @@
                     if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
                     {
                 <td>
-                    @Html.ActionLink("", "Index", "AddTeam", new { team = Model[i] }, new { @class = "btn btn-primary far fa-edit" })
+                    @Html.ActionLink("", "EditTeam", "Standing", new { team = Model[i] }, new { @class = "btn btn-primary far fa-edit" })
                     <form method="post" asp-action="DeleteTeam" asp-controller="Standing">
                         @Html.AntiForgeryToken()
                         <input hidden asp-for="@Model[i].Id" value="@Model[i].Id" />

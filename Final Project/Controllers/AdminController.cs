@@ -51,7 +51,10 @@ namespace FinalProject.Controllers
         [HttpGet]
         public IActionResult AddUserToRole(string Email)
         {
-            return View("AddUserToRole", Email);
+            if (Email == null)
+                return RedirectToAction("Index");
+            else
+                return View("AddUserToRole", Email);
         }
 
         [HttpPost]
