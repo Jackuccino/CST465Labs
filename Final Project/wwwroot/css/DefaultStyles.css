@@ -50,3 +50,15 @@ button {
 .borderless {
     border: 0 none !important;
 }
+
+.group-select-width {
+    width: 110px !important;
+}
+
+.number_input_width {
+    width: 55px !important;
+}
+
+.goals_input_width {
+    width: 63px !important;
+}

@@ -45,12 +45,12 @@ namespace FinalProject.Models
         public int Loses { get; set; }
         [Required]
         [DataType(DataType.Text)]
-        [Range(0, int.MaxValue)]
+        [Range(0, 99)]
         [Display(Name = "Goals For")]
         public int GoalsFor { get; set; }
         [Required]
         [DataType(DataType.Text)]
-        [Range(0, int.MaxValue)]
+        [Range(0, 99)]
         [Display(Name = "Goals Against")]
         public int GoalsAgainst { get; set; }
         public int GoalsDifference

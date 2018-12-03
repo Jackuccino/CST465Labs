@@ -12,11 +12,9 @@ namespace FinalProject.Controllers
     public class StandingController : Controller
     {
         private ITeamDBRepository _TeamRepo;
-        private IMemoryCache _Cache;
 
-        public StandingController(IMemoryCache cache, ITeamDBRepository teamRepo)
+        public StandingController(ITeamDBRepository teamRepo)
         {
-            _Cache = cache;
             _TeamRepo = teamRepo;
         }
 
@@ -26,23 +24,45 @@ namespace FinalProject.Controllers
             List<Team> teamList = new List<Team>(await _TeamRepo.GetTeamsAsync());
             Team team = new Team
             {
-                GroupA = new List<Team>(teamList.FindAll(m => m.Group == 'A')),
-                GroupB = new List<Team>(teamList.FindAll(m => m.Group == 'B')),
-                GroupC = new List<Team>(teamList.FindAll(m => m.Group == 'C')),
-                GroupD = new List<Team>(teamList.FindAll(m => m.Group == 'D')),
-                GroupE = new List<Team>(teamList.FindAll(m => m.Group == 'E')),
-                GroupF = new List<Team>(teamList.FindAll(m => m.Group == 'F')),
-                GroupG = new List<Team>(teamList.FindAll(m => m.Group == 'G')),
-                GroupH = new List<Team>(teamList.FindAll(m => m.Group == 'H'))
+                GroupA = new List<Team>(teamList.FindAll(t => t.Group == 'A').OrderBy(t => t.Points)),
+                GroupB = new List<Team>(teamList.FindAll(t => t.Group == 'B').OrderBy(t => t.Points)),
+                GroupC = new List<Team>(teamList.FindAll(t => t.Group == 'C').OrderBy(t => t.Points)),
+                GroupD = new List<Team>(teamList.FindAll(t => t.Group == 'D').OrderBy(t => t.Points)),
+                GroupE = new List<Team>(teamList.FindAll(t => t.Group == 'E').OrderBy(t => t.Points)),
+                GroupF = new List<Team>(teamList.FindAll(t => t.Group == 'F').OrderBy(t => t.Points)),
+                GroupG = new List<Team>(teamList.FindAll(t => t.Group == 'G').OrderBy(t => t.Points)),
+                GroupH = new List<Team>(teamList.FindAll(t => t.Group == 'H').OrderBy(t => t.Points))
             };
 
             return View(team);
+        }
+        
+        [HttpGet]
+        public IActionResult AddTeam()
+        {
+            return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult AddTeam(Team team)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(team);
+            }
+
+            _TeamRepo.Insert(team);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteTeam(int id)
+        {
+            _TeamRepo.Delete(id);
+
             return RedirectToAction("Index");
         }
     }

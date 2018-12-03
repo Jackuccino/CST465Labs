@@ -4,10 +4,10 @@ USE [jinjie.xu]
 -- NOTE: Please rename the FK constraints to match the existing ones.
 
 --ALTER TABLE [dbo].[Match] 
---DROP CONSTRAINT FK__Match__AwayTeamI__57DD0BE4;
+--DROP CONSTRAINT FK__Match__AwayTeamI__634EBE90;
 --GO
 --ALTER TABLE [dbo].[Match]
---DROP CONSTRAINT FK__Match__HomeTeamI__56E8E7AB;
+--DROP CONSTRAINT FK__Match__HomeTeamI__625A9A57;
 --GO
 --DROP TABLE [dbo].[Team]
 --GO
@@ -34,7 +34,7 @@ GO
 CREATE TABLE [dbo].[Team](
 	[ID] [int] NOT NULL,
 	[TeamName] [varchar](50) NOT NULL,
-	[Badge] [varchar](max) NOT NULL,
+	[Badge] [varchar](MAX) NULL,
 	[Wins] [int] NOT NULL,
 	[Draws] [int] NOT NULL,
 	[Loses] [int] NOT NULL,

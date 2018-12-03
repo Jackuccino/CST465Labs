@@ -39,13 +39,6 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="A" role="tabpanel" aria-labelledby="A-tab">
             <partial name="_StandingTable" model="@Model.GroupA" />
-            @if (SignInMan.IsSignedIn(User))
-            {
-                if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
-                {
-                    <partial name="_AddTeam" model="@Model" />
-                }
-            }
         </div>
         <div class="tab-pane fade" id="B" role="tabpanel" aria-labelledby="B-tab">
             <partial name="_StandingTable" model="@Model.GroupB" />
