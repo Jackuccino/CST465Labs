@@ -8,17 +8,28 @@ USE [jinjie.xu]
 --ALTER TABLE [dbo].[Match]
 --DROP CONSTRAINT FK__Match__HomeTeamI__7C1A6C5A;
 --GO
+--ALTER TABLE [dbo].[Player]
+--DROP CONSTRAINT FK__Player__TeamId__1A9EF37A;
+--GO
 --DROP TABLE [dbo].[Team]
 --GO
 --DROP TABLE [dbo].[Match]
+--GO
+--DROP TABLE [dbo].[Player]
+--GO
+--DROP PROCEDURE Player_Insert;
 --GO
 --DROP PROCEDURE Team_GetTeams;  
 --GO  
 --DROP PROCEDURE Team_InsertUpdate;  
 --GO  
+--DROP PROCEDURE Team_GetTeam;  
+--GO  
 --DROP PROCEDURE Team_Delete;  
 --GO  
 --DROP PROCEDURE Match_GetMatches;  
+--GO  
+--DROP PROCEDURE Match_GetMatch;  
 --GO  
 --DROP PROCEDURE Match_InsertUpdate;  
 --GO  
@@ -55,9 +66,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Match](
 	[ID] [int] NOT NULL IDENTITY(1,1),
-	[HomeTeamId] [int] NOT NULL REFERENCES Team(Id),
+	[HomeTeamId] [int] NOT NULL REFERENCES Team(ID),
 	[HomeGoals] [int] NOT NULL,
-	[AwayTeamId] [int] NOT NULL REFERENCES Team(Id),
+	[AwayTeamId] [int] NOT NULL REFERENCES Team(ID),
 	[AwayGoals] [int] NOT NULL,
 	[MatchDate] [varchar](50) NOT NULL,
 	[MatchTime] [varchar](50) NULL,
@@ -70,11 +81,72 @@ CREATE TABLE [dbo].[Match](
 ) ON [PRIMARY]
 GO
 
+/****** Object:  Table [dbo].[Player]    Script Date: 12/3/2018 2:57:20 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Player](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](50) NOT NULL,
+	[Position] [varchar](50) NOT NULL,
+	[Nationality] [varchar](50) NOT NULL,
+	[JerseyNumber] [int] NOT NULL,
+	[TeamId] [int] NOT NULL REFERENCES Team(ID),
+	[Timestamp] [datetime] NOT NULL DEFAULT(GETDATE()),
+ CONSTRAINT [PK_Player] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE PROCEDURE Player_Insert
+(
+	@Name varchar(50),
+	@Position varchar(50),
+	@Nationality varchar(50),
+	@JerseyNumber int,
+	@TeamId int
+)
+AS
+BEGIN
+	INSERT INTO Player
+	(
+		[Name],
+		Position,
+		Nationality,
+		JerseyNumber,
+		TeamId
+	)
+	VALUES
+	(
+		@Name,
+		@Position,
+		@Nationality,
+		@JerseyNumber,
+		@TeamId
+	)
+END
+GO
+
 CREATE PROCEDURE Team_GetTeams
 AS
 BEGIN
 	SELECT * 
 	FROM [Team];
+END
+GO
+
+CREATE PROCEDURE Team_GetTeam
+(
+	@ID int = NULL
+)
+AS
+BEGIN
+	SELECT *
+	FROM Team
+	WHERE ID=@ID
 END
 GO
 
@@ -150,6 +222,18 @@ AS
 BEGIN
 	SELECT * 
 	FROM [Match];
+END
+GO
+
+CREATE PROCEDURE Match_GetMatch
+(
+	@ID int = NULL
+)
+AS
+BEGIN
+	SELECT *
+	FROM [Match]
+	WHERE ID=@ID
 END
 GO
 

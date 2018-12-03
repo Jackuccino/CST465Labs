@@ -51,6 +51,39 @@ namespace FinalProject.Repositories
             return teamList;
         }
 
+        public virtual async Task<Team> GetTeamAsync(int id)
+        {
+            Team team = null;
+            using (SqlConnection connection = new SqlConnection(_Configuration["LoginContextConnection"]))
+            {
+                using (SqlCommand command = new SqlCommand("Team_GetTeam", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID", id);
+                    await connection.OpenAsync();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            team = new Team
+                            {
+                                Id = (int)reader["ID"],
+                                TeamName = reader["TeamName"].ToString(),
+                                Badge = reader["Badge"].ToString(),
+                                Wins = (int)reader["Wins"],
+                                Draws = (int)reader["Draws"],
+                                Loses = (int)reader["Loses"],
+                                GoalsFor = (int)reader["GoalsFor"],
+                                GoalsAgainst = (int)reader["GoalsAgainst"],
+                                Group = reader["Group"].ToString()[0]
+                            };
+                        }
+                    }
+                }
+            }
+            return team;
+        }
+
         public virtual async void Insert(Team team)
         {
             using (SqlConnection connection = new SqlConnection(_Configuration["LoginContextConnection"]))

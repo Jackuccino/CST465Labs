@@ -30,11 +30,14 @@ namespace FinalProject.Models
         [Display(Name = "Away Goals")]
         public int AwayGoals { get; set; }
         [Required]
+        [DataType(DataType.Text)]
         [Display(Name = "Match Date")]
         public string MatchDate { get; set; }
+        [DataType(DataType.Text)]
         [Display(Name = "Match Time")]
         public string MatchTime { get; set; }
         [Required]
+        [Range(1, 6)]
         [Display(Name = "Group stage - Matchday #/6")]
         public int MatchDayNumber { get; set; }
     }

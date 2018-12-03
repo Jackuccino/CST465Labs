@@ -33,6 +33,37 @@ namespace FinalProject.Repositories
             }
         }
 
+        public override async Task<Team> GetTeamAsync(int id)
+        {
+            Team team = null;
+            var teamList = await GetTeamsAsync();
+            foreach (var item in teamList)
+            {
+                if (item.Id == id)
+                {
+                    team = new Team
+                    {
+                        Id = item.Id,
+                        TeamName = item.TeamName,
+                        Badge = item.Badge,
+                        Wins = item.Wins,
+                        Draws = item.Draws,
+                        Loses = item.Loses,
+                        GoalsFor = item.GoalsFor,
+                        GoalsAgainst = item.GoalsAgainst,
+                        Group = item.Group
+                    };
+                }
+            }
+
+            if (team == null)
+            {
+                await base.GetTeamAsync(id);
+            }
+
+            return team;
+        }
+
         public override void Insert(Team team)
         {
             base.Insert(team);

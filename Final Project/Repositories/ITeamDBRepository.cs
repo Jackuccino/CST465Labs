@@ -9,6 +9,7 @@ namespace FinalProject.Repositories
     public interface ITeamDBRepository
     {
         Task<List<Team>> GetTeamsAsync();
+        Task<Team> GetTeamAsync(int id);
         void Insert(Team team);
         void Delete(int id);
     }

@@ -55,6 +55,10 @@ button {
     width: 110px !important;
 }
 
+.team-select-width {
+    width: 200px !important;
+}
+
 .number_input_width {
     width: 55px !important;
 }

@@ -9,6 +9,7 @@ namespace FinalProject.Repositories
     public interface IMatchDBRepository
     {
         Task<List<Match>> GetMatchesAsync();
+        Task<Match> GetMatchAsync(int id);
         void Insert(Match match);
         void Delete(int id);
     }

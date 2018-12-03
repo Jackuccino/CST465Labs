@@ -1,0 +1,67 @@
+﻿@model Match
+@{
+    ViewData["Title"] = "Match";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>Match</h2>
+<form asp-action="AddMatch" asp-controller="Matches" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <h4>&nbsp;&nbsp;&nbsp;&nbsp;Group stage - Matchday&nbsp;</h4>
+        <input asp-for="MatchDayNumber" class="form-control number_input_width" />
+        <h4>/6</h4>
+        <span asp-validation-for="MatchDayNumber"></span>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="card bg-transparent border-white m-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <ul class="list-group">
+                                <li class="list-group-item bg-transparent borderless">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <select asp-for="HomeTeamId" asp-items="@(new SelectList(Model.TeamList, "Id", "TeamName"))" class="form-control team-select-width">
+                                                <option selected value="">Home</option>
+                                            </select>
+                                            <span asp-validation-for="HomeTeamId"></span>
+                                        </div>
+                                        <div class="col-2">
+                                            <input asp-for="HomeGoals" type="number" class="form-control number_input_width" />
+                                            <span asp-validation-for="HomeGoals"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item bg-transparent borderless disabled">
+                                    <div class="row">
+                                        <div class="col-sm-10">
+                                            <select asp-for="AwayTeamId" asp-items="@(new SelectList(Model.TeamList, "Id", "TeamName"))" class="form-control team-select-width">
+                                                <option selected value="">Away</option>
+                                            </select>
+                                            <span asp-validation-for="AwayTeamId"></span>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <input asp-for="AwayGoals" type="number" class="form-control number_input_width" />
+                                            <span asp-validation-for="AwayGoals"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3 border-left">
+                            <p class="text-center">FT</p>
+                            <input asp-for="MatchDate" class="form-control" />
+                            <span asp-validation-for="MatchDate"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <button type="submit" class="btn btn-primary mt-4">Confirm</button>
+    </div>
+</form>

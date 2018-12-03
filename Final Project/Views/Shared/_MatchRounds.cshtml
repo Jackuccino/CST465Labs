@@ -1,6 +1,8 @@
 ﻿@model List<Match>
+@inject SignInManager<CustomIdentityUser> SignInMan
+@inject UserManager<CustomIdentityUser> UserMan
 
-@for (int i = 0; i < Model.Count; i++)
+@for (int i = 0; i < Model.Count; i = i + 2)
 {
     <h4>Group stage - Matchday @(i + 1)/6</h4>
     <div class="row">
@@ -11,59 +13,137 @@
                         <div class="col-lg-10">
                             <ul class="list-group">
                                 <li class="list-group-item bg-transparent borderless">
-                                    <div class="row">
-                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).Badge"></div>
-                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).TeamName</div>
-                                        <div class="col-">@Model[i].HomeGoals</div>
-                                    </div>
+                                    @if (Model[i].HomeGoals > Model[i].AwayGoals)
+                                    {
+                                        <div class="row">
+                                            <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).Badge"></div>
+                                            <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).TeamName</div>
+                                            <div class="col-">@Model[i].HomeGoals</div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="row disabled">
+                                            <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).Badge"></div>
+                                            <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).TeamName</div>
+                                            <div class="col-">@Model[i].HomeGoals</div>
+                                        </div>
+                                    }
                                 </li>
                                 <li class="list-group-item bg-transparent borderless disabled">
-                                    <div class="row">
-                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).Badge"></div>
-                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).TeamName</div>
-                                        <div class="col-">@Model[i].AwayGoals</div>
-                                    </div>
+                                    @if (Model[i].HomeGoals > Model[i].AwayGoals)
+                                    {
+                                        <div class="row disabled">
+                                            <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).Badge"></div>
+                                            <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).TeamName</div>
+                                            <div class="col-">@Model[i].AwayGoals</div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="row">
+                                            <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).Badge"></div>
+                                            <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).TeamName</div>
+                                            <div class="col-">@Model[i].AwayGoals</div>
+                                        </div>
+                                    }
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-sm border-left">
+                        <div class="col-sm border-left text-center">
                             <p class="text-center">FT</p>
                             <p class="text-center">@Model[i].MatchDate</p>
+                            @if (SignInMan.IsSignedIn(User))
+                            {
+                                if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
+                                {
+                                    <div>
+                                        @Html.ActionLink("", "EditMatch", "Matches", new { id = Model[i].Id }, new { @class = "btn btn-primary far fa-edit" })
+                                    </div>
+                                    <div class="mt-1">
+                                        <form method="post" asp-action="DeleteMatch" asp-controller="Matches">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="teamId" value="@Model[i].Id" />
+                                            <button type="submit" class="btn btn-danger far fa-trash-alt"></button>
+                                        </form>
+                                    </div>
+                                }
+                            }
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        @i = @(i+1)
-        <div class="col-sm-6">
-            <div class="card bg-transparent border-white m-3">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <ul class="list-group">
-                                <li class="list-group-item bg-transparent borderless">
-                                    <div class="row">
-                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).Badge"></div>
-                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].HomeTeamId).TeamName</div>
-                                        <div class="col-">@Model[i].HomeGoals</div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item bg-transparent borderless disabled">
-                                    <div class="row">
-                                        <div class="col-"><img class="team-icon-size" alt="" src="@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).Badge"></div>
-                                        <div class="col-sm-10">@Model[i].TeamList.Find(t => t.Id == Model[i].AwayTeamId).TeamName</div>
-                                        <div class="col-">@Model[i].AwayGoals</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm border-left">
-                            <p class="text-center">FT</p>
-                            <p class="text-center">@Model[i].MatchDate</p>
+        @if (Model.Count - 1 <= i + 1)
+        {
+            <div class="col-sm-6">
+                <div class="card bg-transparent border-white m-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <ul class="list-group">
+                                    <li class="list-group-item bg-transparent borderless">
+                                        @if (Model[i + 1].HomeGoals > Model[i + 1].AwayGoals)
+                                        {
+                                            <div class="row">
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+1].TeamList.Find(t => t.Id == Model[i+1].HomeTeamId).Badge"></div>
+                                                <div class="col-sm-10">@Model[i + 1].TeamList.Find(t => t.Id == Model[i + 1].HomeTeamId).TeamName</div>
+                                                <div class="col-">@Model[i + 1].HomeGoals</div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="row disabled">
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+1].TeamList.Find(t => t.Id == Model[i+1].HomeTeamId).Badge"></div>
+                                                <div class="col-sm-10">@Model[i + 1].TeamList.Find(t => t.Id == Model[i + 1].HomeTeamId).TeamName</div>
+                                                <div class="col-">@Model[i + 1].HomeGoals</div>
+                                            </div>
+                                        }
+                                    </li>
+                                    <li class="list-group-item bg-transparent borderless disabled">
+                                        @if (Model[i + 1].HomeGoals > Model[i + 1].AwayGoals)
+                                        {
+                                            <div class="row disabled">
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+1].TeamList.Find(t => t.Id == Model[i+1].AwayTeamId).Badge"></div>
+                                                <div class="col-sm-10">@Model[i + 1].TeamList.Find(t => t.Id == Model[i + 1].AwayTeamId).TeamName</div>
+                                                <div class="col-">@Model[i + 1].AwayGoals</div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="row">
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+1].TeamList.Find(t => t.Id == Model[i+1].AwayTeamId).Badge"></div>
+                                                <div class="col-sm-10">@Model[i + 1].TeamList.Find(t => t.Id == Model[i + 1].AwayTeamId).TeamName</div>
+                                                <div class="col-">@Model[i + 1].AwayGoals</div>
+                                            </div>
+                                        }
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm border-left text-center">
+                                <p class="text-center">FT</p>
+                                <p class="text-center">@Model[i + 1].MatchDate</p>
+                                @if (SignInMan.IsSignedIn(User))
+                                {
+                                    if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
+                                    {
+                                        <div>
+                                            @Html.ActionLink("", "EditMatch", "Matches", new { id = Model[i].Id }, new { @class = "btn btn-primary far fa-edit" })
+                                        </div>
+                                        <div class="mt-1">
+                                            <form method="post" asp-action="DeleteMatch" asp-controller="Matches">
+                                                @Html.AntiForgeryToken()
+                                                <input type="hidden" name="teamId" value="@Model[i].Id" />
+                                                <button type="submit" class="btn btn-danger far fa-trash-alt"></button>
+                                            </form>
+                                        </div>
+                                    }
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
     </div>
 }

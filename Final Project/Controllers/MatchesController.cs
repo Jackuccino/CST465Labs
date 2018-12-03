@@ -29,6 +29,43 @@ namespace FinalProject.Controllers
         {
             List<Match> matchList = new List<Match>(await _matchRepo.GetMatchesAsync());
             List<Team> teamList = new List<Team>(await _teamRepo.GetTeamsAsync());
+
+            foreach (var item in matchList)
+            {
+                if (item.TeamList == null)
+                    item.TeamList = new List<Team>(teamList);
+            }
+
+            Match match = new Match()
+            {
+                TeamList = new List<Team>(teamList),
+                GroupA = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'A').OrderBy(m => m.MatchDayNumber)),
+                GroupB = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'B').OrderBy(m => m.MatchDayNumber)),
+                GroupC = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'C').OrderBy(m => m.MatchDayNumber)),
+                GroupD = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'D').OrderBy(m => m.MatchDayNumber)),
+                GroupE = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'E').OrderBy(m => m.MatchDayNumber)),
+                GroupF = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'F').OrderBy(m => m.MatchDayNumber)),
+                GroupG = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'G').OrderBy(m => m.MatchDayNumber)),
+                GroupH = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'H').OrderBy(m => m.MatchDayNumber)),
+            };
+            
+            return View(match);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EditMatch(int id)
+        {
+            var match = await _matchRepo.GetMatchAsync(id);
+            return View("AddMatch", match);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AddMatch()
+        {
+            List<Match> matchList = new List<Match>(await _matchRepo.GetMatchesAsync());
+            List<Team> teamList = new List<Team>(await _teamRepo.GetTeamsAsync());
             Match match = new Match()
             {
                 TeamList = new List<Team>(teamList),
@@ -43,6 +80,31 @@ namespace FinalProject.Controllers
             };
 
             return View(match);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public IActionResult AddMatch(Match match)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(match);
+            }
+
+            _matchRepo.Insert(match);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public IActionResult DeleteMatch(int matchId)
+        {
+            _matchRepo.Delete(matchId);
+
+            return RedirectToAction("Index");
         }
     }
 }

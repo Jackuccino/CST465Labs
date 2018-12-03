@@ -50,6 +50,38 @@ namespace FinalProject.Repositories
             return matchList;
         }
 
+        public virtual async Task<Match> GetMatchAsync(int id)
+        {
+            Match match = null;
+            using (SqlConnection connection = new SqlConnection(_Configuration["LoginContextConnection"]))
+            {
+                using (SqlCommand command = new SqlCommand("Match_GetMatch", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID", id);
+                    await connection.OpenAsync();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            match = new Match
+                            {
+                                Id = (int)reader["ID"],
+                                HomeTeamId = (int)reader["HomeTeamId"],
+                                HomeGoals = (int)reader["HomeGoals"],
+                                AwayTeamId = (int)reader["AwayTeamId"],
+                                AwayGoals = (int)reader["AwayGoals"],
+                                MatchDate = reader["MatchDate"].ToString(),
+                                MatchTime = reader["MatchTime"].ToString(),
+                                MatchDayNumber = (int)reader["MatchDayNumber"]
+                            };
+                        }
+                    }
+                }
+            }
+            return match;
+        }
+
         public virtual async void Insert(Match match)
         {
             using (SqlConnection connection = new SqlConnection(_Configuration["LoginContextConnection"]))

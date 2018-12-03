@@ -26,34 +26,38 @@ namespace FinalProject.Controllers
             List<Team> teamList = new List<Team>(await _TeamRepo.GetTeamsAsync());
             Team team = new Team
             {
-                GroupA = new List<Team>(teamList.FindAll(t => t.Group == 'A').OrderBy(t => t.Points)),
-                GroupB = new List<Team>(teamList.FindAll(t => t.Group == 'B').OrderBy(t => t.Points)),
-                GroupC = new List<Team>(teamList.FindAll(t => t.Group == 'C').OrderBy(t => t.Points)),
-                GroupD = new List<Team>(teamList.FindAll(t => t.Group == 'D').OrderBy(t => t.Points)),
-                GroupE = new List<Team>(teamList.FindAll(t => t.Group == 'E').OrderBy(t => t.Points)),
-                GroupF = new List<Team>(teamList.FindAll(t => t.Group == 'F').OrderBy(t => t.Points)),
-                GroupG = new List<Team>(teamList.FindAll(t => t.Group == 'G').OrderBy(t => t.Points)),
-                GroupH = new List<Team>(teamList.FindAll(t => t.Group == 'H').OrderBy(t => t.Points))
+                GroupA = new List<Team>(teamList.FindAll(t => t.Group == 'A').OrderByDescending(t => t.Points)),
+                GroupB = new List<Team>(teamList.FindAll(t => t.Group == 'B').OrderByDescending(t => t.Points)),
+                GroupC = new List<Team>(teamList.FindAll(t => t.Group == 'C').OrderByDescending(t => t.Points)),
+                GroupD = new List<Team>(teamList.FindAll(t => t.Group == 'D').OrderByDescending(t => t.Points)),
+                GroupE = new List<Team>(teamList.FindAll(t => t.Group == 'E').OrderByDescending(t => t.Points)),
+                GroupF = new List<Team>(teamList.FindAll(t => t.Group == 'F').OrderByDescending(t => t.Points)),
+                GroupG = new List<Team>(teamList.FindAll(t => t.Group == 'G').OrderByDescending(t => t.Points)),
+                GroupH = new List<Team>(teamList.FindAll(t => t.Group == 'H').OrderByDescending(t => t.Points))
             };
 
             return View(team);
         }
         
         [HttpGet]
-        public IActionResult EditTeam(Team team)
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> EditTeam(int id)
         {
+            var team = await _TeamRepo.GetTeamAsync(id);
             return View("AddTeam", team);
         }
 
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddTeam()
         {
-            return View();
+            return View(new Team());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public IActionResult AddTeam(Team team)
         {
             if (!ModelState.IsValid)
@@ -68,9 +72,10 @@ namespace FinalProject.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteTeam(int id)
+        [Authorize(Roles = "Admin")]
+        public IActionResult DeleteTeam(int teamId)
         {
-            _TeamRepo.Delete(id);
+            _TeamRepo.Delete(teamId);
 
             return RedirectToAction("Index");
         }

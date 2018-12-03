@@ -19,8 +19,8 @@ namespace FinalProject.Areas.Identity
                 services.AddDbContext<LoginContext>(options =>
                     options.UseSqlServer(
                         context.Configuration["LoginContextConnection"]));
-                
-                services.AddDefaultIdentity<CustomIdentityUser>(options =>
+
+                services.AddIdentity<CustomIdentityUser, IdentityRole>(options =>
                 {
                     options.Password.RequireDigit = false;
                     options.Password.RequiredLength = 5;
@@ -28,8 +28,21 @@ namespace FinalProject.Areas.Identity
                     options.Password.RequireNonAlphanumeric = true;
                     options.Password.RequireUppercase = false;
                 })
-                .AddRoles<IdentityRole>()
+                .AddRoleManager<RoleManager<IdentityRole>>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<LoginContext>();
+
+                //services.AddDefaultIdentity<CustomIdentityUser>(options =>
+                //{
+                //    options.Password.RequireDigit = false;
+                //    options.Password.RequiredLength = 5;
+                //    options.Password.RequireLowercase = true;
+                //    options.Password.RequireNonAlphanumeric = true;
+                //    options.Password.RequireUppercase = false;
+                //})
+                //.AddRoles<IdentityRole>()
+                //.AddEntityFrameworkStores<LoginContext>();
             });
         }
     }

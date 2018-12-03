@@ -33,6 +33,36 @@ namespace FinalProject.Repositories
             }
         }
 
+        public override async Task<Match> GetMatchAsync(int id)
+        {
+            Match match = null;
+            var matchList = await GetMatchesAsync();
+            foreach (var item in matchList)
+            {
+                if (item.Id == id)
+                {
+                    match = new Match
+                    {
+                        Id = item.Id,
+                        HomeTeamId = item.HomeTeamId,
+                        HomeGoals = item.HomeGoals,
+                        AwayTeamId = item.AwayTeamId,
+                        AwayGoals = item.AwayGoals,
+                        MatchDate = item.MatchDate,
+                        MatchTime = item.MatchTime,
+                        MatchDayNumber = item.MatchDayNumber
+                    };
+                }
+            }
+
+            if (match == null)
+            {
+                await base.GetMatchAsync(id);
+            }
+
+            return match;
+        }
+
         public override void Insert(Match match)
         {
             base.Insert(match);

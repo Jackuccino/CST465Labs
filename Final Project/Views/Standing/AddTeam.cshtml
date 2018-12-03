@@ -1,15 +1,18 @@
 ﻿@model Team
 @{
-    ViewData["Title"] = "Add a Team";
+    ViewData["Title"] = "Team";
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
 }
 
-<h2>Add a Team</h2>
+<h2>Team</h2>
 
 <form asp-action="AddTeam" asp-controller="Standing" method="post">
     @Html.AntiForgeryToken()
     <div class="container">
         <div class="row">
+
+            <input hidden asp-for="Id" value="@Model.Id" />
+
             <div class="col-sm-4">
                 <label asp-for="TeamName" class="control-label"></label>
                 <input asp-for="TeamName" class="form-control" />
@@ -64,6 +67,6 @@
                 <span asp-validation-for="Group"></span>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Create Team</button>
+        <button type="submit" class="btn btn-primary mt-4">Confirm</button>
     </div>
 </form>
