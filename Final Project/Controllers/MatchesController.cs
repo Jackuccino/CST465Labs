@@ -15,11 +15,9 @@ namespace FinalProject.Controllers
     {
         private ITeamDBRepository _teamRepo;
         private IMatchDBRepository _matchRepo;
-        private IMemoryCache _Cache;
 
-        public MatchesController(IMemoryCache cache, IMatchDBRepository matchRepo, ITeamDBRepository teamRepo)
+        public MatchesController(IMatchDBRepository matchRepo, ITeamDBRepository teamRepo)
         {
-            _Cache = cache;
             _teamRepo = teamRepo;
             _matchRepo = matchRepo;
         }
@@ -57,6 +55,10 @@ namespace FinalProject.Controllers
         public async Task<IActionResult> EditMatch(int id)
         {
             var match = await _matchRepo.GetMatchAsync(id);
+
+            if (match.TeamList == null)
+                match.TeamList = await _teamRepo.GetTeamsAsync();
+
             return View("AddMatch", match);
         }
 
@@ -66,6 +68,13 @@ namespace FinalProject.Controllers
         {
             List<Match> matchList = new List<Match>(await _matchRepo.GetMatchesAsync());
             List<Team> teamList = new List<Team>(await _teamRepo.GetTeamsAsync());
+
+            foreach (var item in matchList)
+            {
+                if (item.TeamList == null)
+                    item.TeamList = new List<Team>(teamList);
+            }
+
             Match match = new Match()
             {
                 TeamList = new List<Team>(teamList),

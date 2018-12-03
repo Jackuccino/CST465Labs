@@ -11,7 +11,7 @@ namespace FinalProject.Repositories
     public class MatchCachingDBRepository : MatchDBRepository
     {
         private readonly string _CachePrefix = "MatchCacheRepo";
-        private string _CacheListKey { get { return $"{_CachePrefix}_List"; } }
+        private string _CacheMatchKey { get { return $"{_CachePrefix}_List"; } }
         private IMemoryCache _Cache;
         public MatchCachingDBRepository(IConfiguration configuration, IMemoryCache cache) : base(configuration)
         {
@@ -20,7 +20,7 @@ namespace FinalProject.Repositories
 
         public override async Task<List<Match>> GetMatchesAsync()
         {
-            var matchList = (List<Match>)_Cache.Get(_CacheListKey);
+            var matchList = (List<Match>)_Cache.Get(_CacheMatchKey);
             if (matchList != null)
             {
                 return matchList;
@@ -28,7 +28,7 @@ namespace FinalProject.Repositories
             else
             {
                 matchList = await base.GetMatchesAsync();
-                _Cache.Set(_CacheListKey, matchList);
+                _Cache.Set(_CacheMatchKey, matchList);
                 return matchList;
             }
         }
@@ -66,13 +66,13 @@ namespace FinalProject.Repositories
         public override void Insert(Match match)
         {
             base.Insert(match);
-            _Cache.Remove(_CacheListKey);
+            _Cache.Remove(_CacheMatchKey);
         }
 
         public override void Delete(int id)
         {
             base.Delete(id);
-            _Cache.Remove(_CacheListKey);
+            _Cache.Remove(_CacheMatchKey);
         }
     }
 }

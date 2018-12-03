@@ -7,7 +7,7 @@
 <h2>Match</h2>
 <form asp-action="AddMatch" asp-controller="Matches" method="post">
     @Html.AntiForgeryToken()
-
+    <input hidden asp-for="Id" value="@Model.Id" />
     <div class="row">
         <h4>&nbsp;&nbsp;&nbsp;&nbsp;Group stage - Matchday&nbsp;</h4>
         <input asp-for="MatchDayNumber" class="form-control number_input_width" />
