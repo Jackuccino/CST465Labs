@@ -2,12 +2,11 @@ USE [jinjie.xu]
 
 -- The commented section below is used to drop all the existing FK, tables, and procedures
 -- NOTE: Please rename the FK constraints to match the existing ones.
-
 --ALTER TABLE [dbo].[Match] 
---DROP CONSTRAINT FK__Match__AwayTeamI__634EBE90;
+--DROP CONSTRAINT FK__Match__AwayTeamI__7D0E9093;
 --GO
 --ALTER TABLE [dbo].[Match]
---DROP CONSTRAINT FK__Match__HomeTeamI__625A9A57;
+--DROP CONSTRAINT FK__Match__HomeTeamI__7C1A6C5A;
 --GO
 --DROP TABLE [dbo].[Team]
 --GO
@@ -32,7 +31,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Team](
-	[ID] [int] NOT NULL,
+	[ID] [int] NOT NULL IDENTITY(1,1),
 	[TeamName] [varchar](50) NOT NULL,
 	[Badge] [varchar](MAX) NULL,
 	[Wins] [int] NOT NULL,
@@ -41,7 +40,7 @@ CREATE TABLE [dbo].[Team](
 	[GoalsFor] [int] NOT NULL,
 	[GoalsAgainst] [int] NOT NULL,
 	[Group] [char] NOT NULL,
-	[Timestamp] [datetime] NOT NULL,
+	[Timestamp] [datetime] NOT NULL DEFAULT(GETDATE())
  CONSTRAINT [PK_Team] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -55,7 +54,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Match](
-	[ID] [int] NOT NULL,
+	[ID] [int] NOT NULL IDENTITY(1,1),
 	[HomeTeamId] [int] NOT NULL REFERENCES Team(Id),
 	[HomeGoals] [int] NOT NULL,
 	[AwayTeamId] [int] NOT NULL REFERENCES Team(Id),
@@ -63,7 +62,7 @@ CREATE TABLE [dbo].[Match](
 	[MatchDate] [varchar](50) NOT NULL,
 	[MatchTime] [varchar](50) NULL,
 	[MatchDayNumber] [int] NOT NULL,
-	[Timestamp] [datetime] NOT NULL,
+	[Timestamp] [datetime] NOT NULL DEFAULT(GETDATE())
  CONSTRAINT [PK_Match] PRIMARY KEY CLUSTERED 
 (
 	[ID] ASC
@@ -88,7 +87,8 @@ CREATE PROCEDURE Team_InsertUpdate
 	@Draws int, 
 	@Loses int,
 	@GoalsFor int,
-	@GoalsAgainst int
+	@GoalsAgainst int,
+	@Group char
 )
 AS
 BEGIN
@@ -102,7 +102,8 @@ IF @ID IS NULL
 			Draws,
 			Loses,
 			GoalsFor,
-			GoalsAgainst
+			GoalsAgainst,
+			[Group]
 		)
 		VALUES
 		(
@@ -112,7 +113,8 @@ IF @ID IS NULL
 			@Draws,
 			@Loses,
 			@GoalsFor,
-			@GoalsAgainst
+			@GoalsAgainst,
+			@Group
 		)
 	END
 ELSE
@@ -125,7 +127,8 @@ ELSE
 		Draws=@Draws,
 		Loses=@Loses,
 		GoalsFor=@GoalsFor,
-		GoalsAgainst=@GoalsAgainst
+		GoalsAgainst=@GoalsAgainst,
+		[Group]=@Group
 		WHERE ID=@ID;
 	END
 END
@@ -158,7 +161,8 @@ CREATE PROCEDURE Match_InsertUpdate
 	@AwayTeamId int,
 	@AwayGoals int,
 	@MatchDate varchar(50),
-	@MatchTime varchar(50) = NULL
+	@MatchTime varchar(50) = NULL,
+	@MatchDayNumber int
 )
 AS
 BEGIN
@@ -171,7 +175,8 @@ IF @ID IS NULL
 			AwayTeamId,
 			AwayGoals,
 			MatchDate,
-			MatchTime
+			MatchTime,
+			MatchDayNumber
 		)
 		VALUES
 		(
@@ -180,7 +185,8 @@ IF @ID IS NULL
 			@AwayTeamId,
 			@AwayGoals,
 			@MatchDate,
-			@MatchTime
+			@MatchTime,
+			@MatchDayNumber
 		)
 	END
 ELSE
@@ -192,7 +198,8 @@ ELSE
 		AwayTeamId=@AwayTeamId,
 		AwayGoals=@AwayGoals,
 		MatchDate=@MatchDate,
-		MatchTime=@MatchTime
+		MatchTime=@MatchTime,
+		MatchDayNumber=@MatchDayNumber
 		WHERE ID=@ID;
 	END
 END

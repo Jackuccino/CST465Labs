@@ -31,13 +31,30 @@
         @foreach (var role in RoleMan.Roles)
         {
             <li class="list-group-item list-background-color border-primary">
-                <form asp-action="AddUserToRole" asp-controller="Admin" method="post">
-                    @Html.AntiForgeryToken()
-                    <label for="RoleName" class="control-label">@role.Name</label>
-                    <input type="hidden" id="@Model" name="Email" value="@Model" class="form-control" />
-                    <input type="hidden" id="@role.Name" name="RoleName" value="@role.Name" class="form-control" />
-                    <button type="submit" class="float-right btn btn-primary fas fa-plus"></button>
-                </form>
+                <div class="row">
+                    <div class="col-sm-10">
+                        <label for="RoleName" class="control-label">@role.Name</label>
+                    </div>
+                    <div class="col-sm-1">
+                        <form asp-action="AddUserToRole" asp-controller="Admin" method="post">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" id="@Model" name="Email" value="@Model" class="form-control" />
+                            <input type="hidden" id="@role.Name" name="RoleName" value="@role.Name" class="form-control" />
+                            <button type="submit" class="float-right btn btn-primary fas fa-plus"></button>
+                        </form>
+                    </div>
+                    @if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(Model).Result, @role.Name).Result)
+                    {
+                        <div class="col-sm-1">
+                            <form asp-action="RemoveUserFromRole" asp-controller="Admin" method="post">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" id="@Model" name="Email" value="@Model" class="form-control" />
+                                <input type="hidden" id="@role.Name" name="RoleName" value="@role.Name" class="form-control" />
+                                <button type="submit" class="float-right btn btn-danger fas fa-minus"></button>
+                            </form>
+                        </div>
+                    }
+                </div>
             </li>
         }
     </ul>

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using FinalProject.Models;
 using FinalProject.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class MatchesController : Controller
     {
         private ITeamDBRepository _teamRepo;

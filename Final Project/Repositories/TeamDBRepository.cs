@@ -41,7 +41,7 @@ namespace FinalProject.Repositories
                                 Loses = (int)reader["Loses"],
                                 GoalsFor = (int)reader["GoalsFor"],
                                 GoalsAgainst = (int)reader["GoalsAgainst"],
-                                Group = (char)reader["Group"]
+                                Group = reader["Group"].ToString()[0]
                             };
                             teamList.Add(team);
                         }

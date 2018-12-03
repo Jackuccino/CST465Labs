@@ -6,7 +6,7 @@
     <thead>
         <tr>
             <th scope="col">Club</th>
-            <th class="w-75" scope="col"></th>
+            <th class="w-50 p-3" scope="col"></th>
             <th scope="col">MP</th>
             <th scope="col">W</th>
             <th scope="col">D</th>
@@ -29,8 +29,7 @@
         {
             <tr>
                 <th scope="row">@(i + 1)</th>
-                <td>@Model[i].Badge</td>
-                <td>@Model[i].TeamName</td>
+                <td><img class="team-icon-size" alt="" src="@Model[i].Badge">@Model[i].TeamName</td>
                 <td>@Model[i].MatchesPlayed</td>
                 <td>@Model[i].Wins</td>
                 <td>@Model[i].Draws</td>
@@ -43,14 +42,20 @@
                 {
                     if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
                     {
-                <td>
-                    @Html.ActionLink("", "EditTeam", "Standing", new { team = Model[i] }, new { @class = "btn btn-primary far fa-edit" })
-                    <form method="post" asp-action="DeleteTeam" asp-controller="Standing">
-                        @Html.AntiForgeryToken()
-                        <input hidden asp-for="@Model[i].Id" value="@Model[i].Id" />
-                        <button type="button" class="btn btn-danger far fa-trash-alt"></button>
-                    </form>
-                </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    @Html.ActionLink("", "EditTeam", "Standing", new { team = Model[i] }, new { @class = "btn btn-primary far fa-edit" })
+                                </div>
+                                <div class="col-sm-4">
+                                    <form method="post" asp-action="DeleteTeam" asp-controller="Standing">
+                                        @Html.AntiForgeryToken()
+                                        <input hidden asp-for="@Model[i].Id" value="@Model[i].Id" />
+                                        <button type="button" class="btn btn-danger far fa-trash-alt"></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
                     }
                 }
             </tr>

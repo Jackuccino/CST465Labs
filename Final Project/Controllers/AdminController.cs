@@ -69,7 +69,22 @@ namespace FinalProject.Controllers
                 throw new Exception(identityResult.Errors.Select(e => e.Description).Aggregate((a, b) => a + "," + b));
             }
 
-            return RedirectToAction("Index");
+            return View("AddUserToRole", Email);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>RemoveUserFromRole(string Email, string RoleName)
+        {
+            CustomIdentityUser identityUser = await _UserManager.FindByEmailAsync(Email);
+            IdentityResult identityResult = await _UserManager.RemoveFromRoleAsync(identityUser, RoleName);
+
+            if (!identityResult.Succeeded)
+            {
+                throw new Exception(identityResult.Errors.Select(e => e.Description).Aggregate((a, b) => a + "," + b));
+            }
+
+            return View("AddUserToRole", Email);
         }
     }
 }

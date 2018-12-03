@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using FinalProject.Repositories;
 using Microsoft.Extensions.Caching.Memory;
 using FinalProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FinalProject.Controllers
 {
+    [Authorize]
     public class StandingController : Controller
     {
         private ITeamDBRepository _TeamRepo;
