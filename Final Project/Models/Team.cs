@@ -21,8 +21,8 @@ namespace FinalProject.Models
         [Required]
         [DataType(DataType.Text)]
         public string TeamName { get; set; }
-        [Required]
         [DataType(DataType.Url)]
+        [Display(Name = "Badge (Optional)")]
         public string Badge { get; set; }
         public int MatchesPlayed
         {

@@ -36,7 +36,14 @@ namespace FinalProject.Repositories
         public override async Task<Team> GetTeamAsync(int id)
         {
             Team team = null;
-            var teamList = await GetTeamsAsync();
+            var teamList = (List<Team>)_Cache.Get(_CacheListKey);
+
+            if (teamList == null)
+            {
+                teamList = await base.GetTeamsAsync();
+                _Cache.Set(_CacheListKey, teamList);
+            }
+
             foreach (var item in teamList)
             {
                 if (item.Id == id)
@@ -66,14 +73,14 @@ namespace FinalProject.Repositories
 
         public override void Insert(Team team)
         {
-            base.Insert(team);
             _Cache.Remove(_CacheListKey);
+            base.Insert(team);
         }
 
         public override void Delete(int id)
         {
-            base.Delete(id);
             _Cache.Remove(_CacheListKey);
+            base.Delete(id);
         }
     }
 }

@@ -6,7 +6,7 @@
 {
     <h4>Group stage - Matchday @(i + 1)/6</h4>
     <div class="row">
-        @for (int j = 0; j < 2 && Model.Count - 1 > i + j; j++)
+        @for (int j = i; j < i + 2 && Model.Count - 1 >= i + j; j++)
         {
             <div class="col-sm-6">
                 <div class="card bg-transparent border-white m-3">
@@ -18,7 +18,7 @@
                                     {
                                         <li class="list-group-item bg-transparent borderless">
                                             <div class="row">
-                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].HomeTeamId).Badge"></div>
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].HomeTeamId).Badge" /></div>
                                                 <div class="col-sm-10">@Model[i + j].TeamList.Find(t => t.Id == Model[i + j].HomeTeamId).TeamName</div>
                                                 <div class="col-">@Model[i + j].HomeGoals</div>
                                             </div>
@@ -28,7 +28,7 @@
                                     {
                                         <li class="list-group-item bg-transparent borderless disabled">
                                             <div class="row">
-                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].HomeTeamId).Badge"></div>
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].HomeTeamId).Badge" /></div>
                                                 <div class="col-sm-10">@Model[i + j].TeamList.Find(t => t.Id == Model[i + j].HomeTeamId).TeamName</div>
                                                 <div class="col-">@Model[i + j].HomeGoals</div>
                                             </div>
@@ -38,7 +38,7 @@
                                     {
                                         <li class="list-group-item bg-transparent borderless">
                                             <div class="row">
-                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].AwayTeamId).Badge"></div>
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].AwayTeamId).Badge" /></div>
                                                 <div class="col-sm-10">@Model[i + j].TeamList.Find(t => t.Id == Model[i + j].AwayTeamId).TeamName</div>
                                                 <div class="col-">@Model[i + j].AwayGoals</div>
                                             </div>
@@ -48,7 +48,7 @@
                                     {
                                         <li class="list-group-item bg-transparent borderless disabled">
                                             <div class="row">
-                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].AwayTeamId).Badge"></div>
+                                                <div class="col-"><img class="team-icon-size" alt="" src="@Model[i+j].TeamList.Find(t => t.Id == Model[i+j].AwayTeamId).Badge" /></div>
                                                 <div class="col-sm-10">@Model[i + j].TeamList.Find(t => t.Id == Model[i + j].AwayTeamId).TeamName</div>
                                                 <div class="col-">@Model[i + j].AwayGoals</div>
                                             </div>

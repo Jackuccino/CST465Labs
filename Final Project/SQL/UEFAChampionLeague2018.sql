@@ -154,7 +154,7 @@ CREATE PROCEDURE Team_InsertUpdate
 (
 	@ID int = NULL,
 	@TeamName varchar(50),
-	@Badge varchar(MAX),
+	@Badge varchar(MAX) = NULL,
 	@Wins int,
 	@Draws int, 
 	@Loses int,

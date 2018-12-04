@@ -24,6 +24,7 @@ namespace FinalProject.Controllers
         public async Task<IActionResult> Index()
         {
             List<Team> teamList = new List<Team>(await _TeamRepo.GetTeamsAsync());
+
             Team team = new Team
             {
                 GroupA = new List<Team>(teamList.FindAll(t => t.Group == 'A').OrderByDescending(t => t.Points)),
@@ -67,7 +68,7 @@ namespace FinalProject.Controllers
 
             _TeamRepo.Insert(team);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("AddTeam");
         }
 
         [HttpPost]

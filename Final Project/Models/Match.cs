@@ -37,7 +37,7 @@ namespace FinalProject.Models
         [Display(Name = "Match Time")]
         public string MatchTime { get; set; }
         [Required]
-        [Range(1, 6)]
+        [Range(1, 6, ErrorMessage = "Group stage should be between 1 and 6 round(s).")]
         [Display(Name = "Group stage - Matchday #/6")]
         public int MatchDayNumber { get; set; }
     }

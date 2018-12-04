@@ -31,12 +31,12 @@ namespace FinalProject.Controllers
             foreach (var item in matchList)
             {
                 if (item.TeamList == null)
-                    item.TeamList = new List<Team>(teamList);
+                    item.TeamList = new List<Team>(teamList.OrderBy(t => t.TeamName));
             }
 
             Match match = new Match()
             {
-                TeamList = new List<Team>(teamList),
+                TeamList = new List<Team>(teamList.OrderBy(t => t.TeamName)),
                 GroupA = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'A').OrderBy(m => m.MatchDayNumber)),
                 GroupB = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'B').OrderBy(m => m.MatchDayNumber)),
                 GroupC = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'C').OrderBy(m => m.MatchDayNumber)),
@@ -57,7 +57,9 @@ namespace FinalProject.Controllers
             var match = await _matchRepo.GetMatchAsync(id);
 
             if (match.TeamList == null)
+            {
                 match.TeamList = await _teamRepo.GetTeamsAsync();
+            }
 
             return View("AddMatch", match);
         }
@@ -72,12 +74,12 @@ namespace FinalProject.Controllers
             foreach (var item in matchList)
             {
                 if (item.TeamList == null)
-                    item.TeamList = new List<Team>(teamList);
+                    item.TeamList = new List<Team>(teamList.OrderBy(t => t.TeamName));
             }
 
             Match match = new Match()
             {
-                TeamList = new List<Team>(teamList),
+                TeamList = new List<Team>(teamList.OrderBy(t => t.TeamName)),
                 GroupA = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'A').OrderBy(m => m.MatchDayNumber)),
                 GroupB = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'B').OrderBy(m => m.MatchDayNumber)),
                 GroupC = new List<Match>(matchList.FindAll(m => teamList.Find(t => t.Id == m.HomeTeamId).Group == 'C').OrderBy(m => m.MatchDayNumber)),
@@ -103,7 +105,7 @@ namespace FinalProject.Controllers
 
             _matchRepo.Insert(match);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("AddMatch");
         }
 
         [HttpPost]

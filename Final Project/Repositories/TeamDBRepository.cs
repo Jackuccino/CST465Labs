@@ -97,7 +97,10 @@ namespace FinalProject.Repositories
                         command.Parameters.AddWithValue("@ID", team.Id);
                     }
                     command.Parameters.AddWithValue("@TeamName", team.TeamName);
-                    command.Parameters.AddWithValue("@Badge", team.Badge);
+                    if (team.Badge != null)
+                    {
+                        command.Parameters.AddWithValue("@Badge", team.Badge);
+                    }
                     command.Parameters.AddWithValue("@Wins", team.Wins);
                     command.Parameters.AddWithValue("@Draws", team.Draws);
                     command.Parameters.AddWithValue("@Loses", team.Loses);
