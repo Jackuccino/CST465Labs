@@ -79,7 +79,7 @@
                                         <div class="mt-1">
                                             <form method="post" asp-action="DeleteMatch" asp-controller="Matches">
                                                 @Html.AntiForgeryToken()
-                                                <input type="hidden" name="teamId" value="@Model[i+j].Id" />
+                                                <input type="hidden" name="matchId" value="@Model[i+j].Id" />
                                                 <button type="submit" class="btn btn-danger far fa-trash-alt"></button>
                                             </form>
                                         </div>

@@ -1,0 +1,71 @@
+﻿@model Player
+@inject SignInManager<CustomIdentityUser> SignInMan
+@inject UserManager<CustomIdentityUser> UserMan
+
+@{
+    ViewData["Title"] = "Top Scorer";
+    Layout = "~/Views/Shared/_DefaultLayout.cshtml";
+}
+
+<h2>Top Scorer</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">Player</th>
+            <th scope="col">Club</th>
+            <th scope="col">Position</th>
+            <th scope="col">Jersey</th>
+            <th scope="col">Goals</th>
+            @if (SignInMan.IsSignedIn(User))
+            {
+                if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
+                {
+                    <th scope="col"></th>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0, j = 1; i < Model.PlayerList.Count; i++, j++)
+        {
+            <tr>
+                @if (i - 1 >= 0 && Model.PlayerList[i].GoalScored == Model.PlayerList[i - 1].GoalScored)
+                {
+                    <th scope="row">@(--j)</th>
+                }
+                else
+                {
+                    j = i + 1;
+                    <th scope="row">@(i + 1)</th>
+                }
+                <td>@Model.PlayerList[i].Name</td>
+                <td><img class="team-icon-size" alt="" src="@Model.TeamList.Find(t => t.Id == Model.PlayerList[i].TeamId).Badge"> @Model.TeamList.Find(t => t.Id == Model.PlayerList[i].TeamId).TeamName</td>
+                <td>@Model.PlayerList[i].Position</td>
+                <td>@Model.PlayerList[i].JerseyNumber</td>
+                <td>@Model.PlayerList[i].GoalScored</td>
+                @if (SignInMan.IsSignedIn(User))
+                {
+                    if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
+                    {
+                        <td>
+                            <div class="row">
+                                <div class="col-4">
+                                    @Html.ActionLink("", "EditPlayer", "TopScorer", new { id = Model.PlayerList[i].Id }, new { @class = "btn btn-primary far fa-edit" })
+                                </div>
+                                <div class="col-8">
+                                    <form method="post" asp-action="DeletePlayer" asp-controller="TopScorer">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="playerId" value="@Model.PlayerList[i].Id" />
+                                        <button type="submit" class="btn btn-danger far fa-trash-alt"></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

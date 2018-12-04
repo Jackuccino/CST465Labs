@@ -9,7 +9,7 @@ USE [jinjie.xu]
 --DROP CONSTRAINT FK__Match__HomeTeamI__7C1A6C5A;
 --GO
 --ALTER TABLE [dbo].[Player]
---DROP CONSTRAINT FK__Player__TeamId__1A9EF37A;
+--DROP CONSTRAINT FK__Player__TeamId__1F63A897;
 --GO
 --DROP TABLE [dbo].[Team]
 --GO
@@ -17,7 +17,13 @@ USE [jinjie.xu]
 --GO
 --DROP TABLE [dbo].[Player]
 --GO
---DROP PROCEDURE Player_Insert;
+--DROP PROCEDURE Player_GetPlayers;
+--GO
+--DROP PROCEDURE Player_GetPlayer;
+--GO
+--DROP PROCEDURE Player_InsertUpdate;
+--GO
+--DROP PROCEDURE Player_Delete;
 --GO
 --DROP PROCEDURE Team_GetTeams;  
 --GO  
@@ -92,6 +98,7 @@ CREATE TABLE [dbo].[Player](
 	[Position] [varchar](50) NOT NULL,
 	[Nationality] [varchar](50) NOT NULL,
 	[JerseyNumber] [int] NOT NULL,
+	[GoalScored] [int] NOT NULL,
 	[TeamId] [int] NOT NULL REFERENCES Team(ID),
 	[Timestamp] [datetime] NOT NULL DEFAULT(GETDATE()),
  CONSTRAINT [PK_Player] PRIMARY KEY CLUSTERED 
@@ -101,32 +108,82 @@ CREATE TABLE [dbo].[Player](
 ) ON [PRIMARY]
 GO
 
-CREATE PROCEDURE Player_Insert
+CREATE PROCEDURE Player_GetPlayers
+AS
+BEGIN
+	SELECT * 
+	FROM Player;
+END
+GO
+
+CREATE PROCEDURE Player_GetPlayer
 (
+	@ID int = NULL
+)
+AS
+BEGIN
+	SELECT *
+	FROM Player
+	WHERE ID=@ID
+END
+GO
+
+CREATE PROCEDURE Player_InsertUpdate
+(
+	@ID int = NULL,
 	@Name varchar(50),
 	@Position varchar(50),
 	@Nationality varchar(50),
 	@JerseyNumber int,
+	@GoalScored int,
 	@TeamId int
 )
 AS
 BEGIN
-	INSERT INTO Player
-	(
-		[Name],
-		Position,
-		Nationality,
-		JerseyNumber,
-		TeamId
-	)
-	VALUES
-	(
-		@Name,
-		@Position,
-		@Nationality,
-		@JerseyNumber,
-		@TeamId
-	)
+IF @ID IS NULL
+	BEGIN
+		INSERT INTO Player
+		(
+			[Name],
+			Position,
+			Nationality,
+			JerseyNumber,
+			GoalScored,
+			TeamId
+		)
+		VALUES
+		(
+			@Name,
+			@Position,
+			@Nationality,
+			@JerseyNumber,
+			@GoalScored,
+			@TeamId
+		)
+	END
+ELSE
+	BEGIN
+		UPDATE Player 
+		SET 
+		[Name]=@Name,
+		Position=@Position,
+		Nationality=@Nationality,
+		JerseyNumber=@JerseyNumber,
+		GoalScored=@GoalScored,
+		TeamId=@TeamId
+		WHERE ID=@ID;
+	END
+END
+GO
+
+CREATE PROCEDURE Player_Delete
+(
+	@ID int
+)
+AS
+BEGIN
+	DELETE FROM Player
+	WHERE ID=@ID;
 END
 GO
 

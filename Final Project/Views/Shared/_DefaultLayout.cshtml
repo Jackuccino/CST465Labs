@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark">
             <h1 class="navbar-brand">
                 <img class="team-icon-size bg-white" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/UEFA_Champions_League_logo_2.svg/175px-UEFA_Champions_League_logo_2.svg.png" alt="Image result" />
-                UEFA Champions League
+                UCL
             </h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,10 +36,12 @@
                             @Html.ActionLink("Roles", "Index", "Admin", null, new { @class = "nav-item nav-link" })
                             @Html.ActionLink("AddTeam", "AddTeam", "Standing", null, new { @class = "nav-item nav-link" })
                             @Html.ActionLink("AddMatch", "AddMatch", "Matches", null, new { @class = "nav-item nav-link" })
+                            @Html.ActionLink("AddPlayer", "AddPlayer", "TopScorer", null, new { @class = "nav-item nav-link" })
                         }
                     }
                     @Html.ActionLink("Standings", "Index", "Standing", null, new { @class = "nav-item nav-link" })
                     @Html.ActionLink("Matches", "Index", "Matches", null, new { @class = "nav-item nav-link" })
+                    @Html.ActionLink("Top Scorer", "Index", "TopScorer", null, new { @class = "nav-item nav-link" })
                 </div>
                 <div class="ml-auto">
                     <partial name="_LoginPartial" />

@@ -53,7 +53,6 @@ namespace FinalProject.Controllers
             return View("AddTeam", team);
         }
 
-
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public IActionResult AddTeam()
