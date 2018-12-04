@@ -2,6 +2,9 @@
 @inject SignInManager<CustomIdentityUser> SignInMan
 @inject UserManager<CustomIdentityUser> UserMan
 
+
+@{ LeagueSettings settings = ViewBag.LeagueSettings;}
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -27,38 +30,45 @@
     <tbody>
         @for (int i = 0; i < Model.Count; i++)
         {
-            <tr>
+        <tr>
+            @if (i > settings.MaxTeamsInAGroup - 1)
+            {
+                <th scope="row">Extra</th>
+            }
+            else
+            {
                 <th scope="row">@(i + 1)</th>
-                <td><img class="team-icon-size" alt="" src="@Model[i].Badge"> @Model[i].TeamName</td>
-                <td>@Model[i].MatchesPlayed</td>
-                <td>@Model[i].Wins</td>
-                <td>@Model[i].Draws</td>
-                <td>@Model[i].Loses</td>
-                <td>@Model[i].GoalsFor</td>
-                <td>@Model[i].GoalsAgainst</td>
-                <td>@Model[i].GoalsDifference</td>
-                <td>@Model[i].Points</td>
-                @if (SignInMan.IsSignedIn(User))
+            }
+            <td><img class="team-icon-size" alt="" src="@Model[i].Badge"> @Model[i].TeamName</td>
+            <td>@Model[i].MatchesPlayed</td>
+            <td>@Model[i].Wins</td>
+            <td>@Model[i].Draws</td>
+            <td>@Model[i].Loses</td>
+            <td>@Model[i].GoalsFor</td>
+            <td>@Model[i].GoalsAgainst</td>
+            <td>@Model[i].GoalsDifference</td>
+            <td>@Model[i].Points</td>
+            @if (SignInMan.IsSignedIn(User))
+            {
+                if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
                 {
-                    if (UserMan.IsInRoleAsync(UserMan.FindByEmailAsync(User.Identity.Name).Result, "Admin").Result)
-                    {
-                        <td>
-                            <div class="row">
-                                <div class="col-4">
-                                    @Html.ActionLink("", "EditTeam", "Standing", new { id = Model[i].Id }, new { @class = "btn btn-primary far fa-edit" })
-                                </div>
-                                <div class="col-8">
-                                    <form method="post" asp-action="DeleteTeam" asp-controller="Standing">
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="teamId" value="@Model[i].Id" />
-                                        <button type="submit" class="btn btn-danger far fa-trash-alt"></button>
-                                    </form>
-                                </div>
+                    <td>
+                        <div class="row">
+                            <div class="col-4">
+                                @Html.ActionLink("", "EditTeam", "Standing", new { id = Model[i].Id }, new { @class = "btn btn-primary far fa-edit" })
                             </div>
-                        </td>
-                    }
+                            <div class="col-8">
+                                <form method="post" asp-action="DeleteTeam" asp-controller="Standing">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="teamId" value="@Model[i].Id" />
+                                    <button type="submit" class="btn btn-danger far fa-trash-alt"></button>
+                                </form>
+                            </div>
+                        </div>
+                    </td>
                 }
-            </tr>
+            }
+        </tr>
         }
     </tbody>
 </table>

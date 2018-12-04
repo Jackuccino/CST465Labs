@@ -7,6 +7,7 @@ using FinalProject.Repositories;
 using Microsoft.Extensions.Caching.Memory;
 using FinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
 
 namespace FinalProject.Controllers
 {
@@ -14,15 +15,19 @@ namespace FinalProject.Controllers
     public class StandingController : Controller
     {
         private ITeamDBRepository _TeamRepo;
+        private LeagueSettings _Settings;
 
-        public StandingController(ITeamDBRepository teamRepo)
+        public StandingController(IOptions<LeagueSettings> settings, ITeamDBRepository teamRepo)
         {
+            _Settings = settings.Value;
             _TeamRepo = teamRepo;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.LeagueSettings = _Settings;
+
             List<Team> teamList = new List<Team>(await _TeamRepo.GetTeamsAsync());
 
             Team team = new Team

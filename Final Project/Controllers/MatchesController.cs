@@ -7,6 +7,7 @@ using FinalProject.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 
 namespace FinalProject.Controllers
 {
@@ -15,16 +16,20 @@ namespace FinalProject.Controllers
     {
         private ITeamDBRepository _teamRepo;
         private IMatchDBRepository _matchRepo;
+        private LeagueSettings _Settings;
 
-        public MatchesController(IMatchDBRepository matchRepo, ITeamDBRepository teamRepo)
+        public MatchesController(IOptions<LeagueSettings> settings, IMatchDBRepository matchRepo, ITeamDBRepository teamRepo)
         {
             _teamRepo = teamRepo;
             _matchRepo = matchRepo;
+            _Settings = settings.Value;
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.LeagueSettings = _Settings;
+
             List<Match> matchList = new List<Match>(await _matchRepo.GetMatchesAsync());
             List<Team> teamList = new List<Team>(await _teamRepo.GetTeamsAsync());
 

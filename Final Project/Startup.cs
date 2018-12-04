@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FinalProject.Repositories;
+using System.IO;
 
 namespace FinalProject
 {
@@ -28,7 +29,11 @@ namespace FinalProject
             services.AddMemoryCache();
             services.AddMvc();
 
-            //services.AddSingleton<IConfiguration>(_Configuration);
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("LeagueSettings.json", optional: false, reloadOnChange: true);
+            var configuration = builder.Build();
+            services.Configure<LeagueSettings>(configuration);
 
             services.AddAuthentication().AddFacebook(facebookOptions =>
             {
