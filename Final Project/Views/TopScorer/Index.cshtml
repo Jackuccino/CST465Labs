@@ -33,7 +33,7 @@
         @for (int i = 0, j = 1; i < Model.PlayerList.Count; i++, j++)
         {
             <tr>
-                @if (j > settings.MaxAwardedScorer)
+                @if (i >= settings.MaxAwardedScorer)
                 {
                     <th scope="row">@settings.MaxAwardedScorer+</th>
                 }
