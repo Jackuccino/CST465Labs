@@ -33,7 +33,11 @@ namespace FinalProject.Areas.Identity.Pages.Account
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {
-                return LocalRedirect(returnUrl);
+                // Redirect to current page
+                //return LocalRedirect(returnUrl);
+
+                // Redirect to home page
+                return LocalRedirect("~/Home/Index");
             }
             else
             {
