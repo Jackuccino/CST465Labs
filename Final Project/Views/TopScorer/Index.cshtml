@@ -2,6 +2,8 @@
 @inject SignInManager<CustomIdentityUser> SignInMan
 @inject UserManager<CustomIdentityUser> UserMan
 
+@{ LeagueSettings settings = ViewBag.LeagueSettings;}
+
 @{
     ViewData["Title"] = "Top Scorer";
     Layout = "~/Views/Shared/_DefaultLayout.cshtml";
@@ -31,7 +33,11 @@
         @for (int i = 0, j = 1; i < Model.PlayerList.Count; i++, j++)
         {
             <tr>
-                @if (i - 1 >= 0 && Model.PlayerList[i].GoalScored == Model.PlayerList[i - 1].GoalScored)
+                @if (j > settings.MaxAwardedScorer)
+                {
+                    <th scope="row">@settings.MaxAwardedScorer+</th>
+                }
+                else if (i - 1 >= 0 && Model.PlayerList[i].GoalScored == Model.PlayerList[i - 1].GoalScored)
                 {
                     <th scope="row">@(--j)</th>
                 }

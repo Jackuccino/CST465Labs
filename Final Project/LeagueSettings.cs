@@ -9,5 +9,6 @@ namespace FinalProject
     {
         public int MaxTeamsInAGroup { get; set; }
         public int MaxMatchdayInAGroup { get; set; }
+        public int MaxAwardedScorer { get; set; }
     }
 }

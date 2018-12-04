@@ -1,4 +1,5 @@
 {
   "MaxTeamsInAGroup": "4",
-  "MaxMatchdayInAGroup": "6"
+  "MaxMatchdayInAGroup": "6",
+  "MaxAwardedScorer": "5"
 }
